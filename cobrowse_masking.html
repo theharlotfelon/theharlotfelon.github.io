@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <style>
+        @import url(https://fonts.google.com/download?family=Open%20Sans);
+        form label {font-weight:bold};
+        body {font-family: Open Sans, sans-serif;}
+    </style>
+</head>
 <body>
 
 <h1>CoBrowse Masking Test</h1>
 <form>
     <label for="input1">Blank Text with Class (Field Masking)</label><br>
-    <input type="text" class="mask1" name="input1"><br>
+    <input type="text" class="mask1" name="input1"><br><br>
     <label for="input2"></label>Blank Text with ID (Field Masking)<br>
-    <input type="text" id="mask2" name="input2"><br>
+    <input type="text" id="mask2" name="input2"><br><br>
     <label for="input3"></label>Blank Text with name selector (Field Masking)<br>
-    <input type="text" name="input3"><br>
+    <input type="text" name="input3"><br><br>
     <br>
     <label for="input4"></label>Text Provided with Class (Element Masking)<br>
-    <input type="text" class="mask4" name="input4" value="Provided Text in field"><br>
+    <input type="text" class="mask4" name="input4" value="Provided Text in field"><br><br>
     <label for="input5"></label>Text Provided with ID (Element Masking)<br>
-    <input type="text" id="mask5" name="input5" value="Provided Text in field"><br>
+    <input type="text" id="mask5" name="input5" value="Provided Text in field"><br><br>
     <label for="input6"></label>Text Provided with name selector (Element Masking)<br>
-    <input type="text" name="input6" value="Provided Text in field"><br>
-
-    
+    <input type="text" name="input6" value="Provided Text in field"><br><br>
 </form>
 
 </body>
