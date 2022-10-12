@@ -1,46 +1,222 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <!-- BEGIN LivePerson Monitor. -->
-<script type="text/javascript">window.lpTag=window.lpTag||{},'undefined'==typeof window.lpTag._tagCount?(window.lpTag={wl:lpTag.wl||null,scp:lpTag.scp||null,site:'74228087'||'',section:lpTag.section||'',tagletSection:lpTag.tagletSection||null,autoStart:lpTag.autoStart!==!1,ovr:lpTag.ovr||{},_v:'1.10.0',_tagCount:1,protocol:'https:',events:{bind:function(t,e,i){lpTag.defer(function(){lpTag.events.bind(t,e,i)},0)},trigger:function(t,e,i){lpTag.defer(function(){lpTag.events.trigger(t,e,i)},1)}},defer:function(t,e){0===e?(this._defB=this._defB||[],this._defB.push(t)):1===e?(this._defT=this._defT||[],this._defT.push(t)):(this._defL=this._defL||[],this._defL.push(t))},load:function(t,e,i){var n=this;setTimeout(function(){n._load(t,e,i)},0)},_load:function(t,e,i){var n=t;t||(n=this.protocol+'//'+(this.ovr&&this.ovr.domain?this.ovr.domain:'lptag.liveperson.net')+'/tag/tag.js?site='+this.site);var o=document.createElement('script');o.setAttribute('charset',e?e:'UTF-8'),i&&o.setAttribute('id',i),o.setAttribute('src',n),document.getElementsByTagName('head').item(0).appendChild(o)},init:function(){this._timing=this._timing||{},this._timing.start=(new Date).getTime();var t=this;window.attachEvent?window.attachEvent('onload',function(){t._domReady('domReady')}):(window.addEventListener('DOMContentLoaded',function(){t._domReady('contReady')},!1),window.addEventListener('load',function(){t._domReady('domReady')},!1)),'undefined'===typeof window._lptStop&&this.load()},start:function(){this.autoStart=!0},_domReady:function(t){this.isDom||(this.isDom=!0,this.events.trigger('LPT','DOM_READY',{t:t})),this._timing[t]=(new Date).getTime()},vars:lpTag.vars||[],dbs:lpTag.dbs||[],ctn:lpTag.ctn||[],sdes:lpTag.sdes||[],hooks:lpTag.hooks||[],identities:lpTag.identities||[],ev:lpTag.ev||[]},lpTag.init()):window.lpTag._tagCount+=1;</script>
-<!-- END LivePerson Monitor. -->
-    
+    <script type="text/javascript">
+      window.lpTag = window.lpTag || {}, 'undefined' == typeof window.lpTag._tagCount ? (window.lpTag = {
+        wl: lpTag.wl || null,
+        scp: lpTag.scp || null,
+        site: '74228087' || '',
+        section: lpTag.section || '',
+        tagletSection: lpTag.tagletSection || null,
+        autoStart: lpTag.autoStart !== !1,
+        ovr: lpTag.ovr || {},
+        _v: '1.10.0',
+        _tagCount: 1,
+        protocol: 'https:',
+        events: {
+          bind: function(t, e, i) {
+            lpTag.defer(function() {
+              lpTag.events.bind(t, e, i)
+            }, 0)
+          },
+          trigger: function(t, e, i) {
+            lpTag.defer(function() {
+              lpTag.events.trigger(t, e, i)
+            }, 1)
+          }
+        },
+        defer: function(t, e) {
+          0 === e ? (this._defB = this._defB || [], this._defB.push(t)) : 1 === e ? (this._defT = this._defT || [], this._defT.push(t)) : (this._defL = this._defL || [], this._defL.push(t))
+        },
+        load: function(t, e, i) {
+          var n = this;
+          setTimeout(function() {
+            n._load(t, e, i)
+          }, 0)
+        },
+        _load: function(t, e, i) {
+          var n = t;
+          t || (n = this.protocol + '//' + (this.ovr && this.ovr.domain ? this.ovr.domain : 'lptag.liveperson.net') + '/tag/tag.js?site=' + this.site);
+          var o = document.createElement('script');
+          o.setAttribute('charset', e ? e : 'UTF-8'), i && o.setAttribute('id', i), o.setAttribute('src', n), document.getElementsByTagName('head').item(0).appendChild(o)
+        },
+        init: function() {
+          this._timing = this._timing || {}, this._timing.start = (new Date).getTime();
+          var t = this;
+          window.attachEvent ? window.attachEvent('onload', function() {
+            t._domReady('domReady')
+          }) : (window.addEventListener('DOMContentLoaded', function() {
+            t._domReady('contReady')
+          }, !1), window.addEventListener('load', function() {
+            t._domReady('domReady')
+          }, !1)), 'undefined' === typeof window._lptStop && this.load()
+        },
+        start: function() {
+          this.autoStart = !0
+        },
+        _domReady: function(t) {
+          this.isDom || (this.isDom = !0, this.events.trigger('LPT', 'DOM_READY', {
+            t: t
+          })), this._timing[t] = (new Date).getTime()
+        },
+        vars: lpTag.vars || [],
+        dbs: lpTag.dbs || [],
+        ctn: lpTag.ctn || [],
+        sdes: lpTag.sdes || [],
+        hooks: lpTag.hooks || [],
+        identities: lpTag.identities || [],
+        ev: lpTag.ev || []
+      }, lpTag.init()) : window.lpTag._tagCount += 1;
+    </script>
+    <!-- END LivePerson Monitor. -->
     <style>
-        @font-face {
-            font-family: Open Sans, sans-serif;
-            src: url(https://fonts.google.com/download?family=Open%20Sans);
-        }
-        form label {
-            font-weight:bold
-        };
+      @font-face {
+        font-family: Open Sans, sans-serif;
+        src: url(https://fonts.google.com/download?family=Open%20Sans);
+      }
+
+      form label {
+        font-weight: bold
+      }
+
+      ;
     </style>
-</head>
-<body>
-
-<h1>CoBrowse Masking Test</h1>
-<form>
-    <label for="Name">Sky example (Class):</lable>
-    <input class="text-input__Input-sc-16mtj2o-0 hBPhBk input PII" name="Name" id="de77b7ff-bd21-465d-bd9d-027a277890f7" placeholder="" autocomplete="off" data-test-id="Name-test-id" value="">
-    <br>
-    <label for="Name">Sky example (Name):</lable>
-    <input class="text-input__Input-sc-16mtj2o-0 hBPhBk input" name="Name" id="de77b7ff-bd21-465d-bd9d-027a277890f7" placeholder="" autocomplete="off" data-test-id="Name-test-id" value="">
-    <br>
-    <br>
-  <label for="fname">First name:</label>
-  <br>
-  <input type="text" id="fname" name="fname" data-protected="true">
-  <br>
-  <label for="lname">Last name:</label>
-  <br>
-  <input type="text" id="lname" name="lname" class="PII">
-  <br>
-  <label for="abv">abc abv:</label>
-  <br>
-  <input type="text" id="abv" name="abv">
-  <br>
-  <br>
-  <input type="submit" value="Submit"
-</form>
-
-</body>
+  </head>
+  <body>
+    <h1>CoBrowse Masking Test</h1>
+    <form>
+      <label for="Name">Sky example (Class): </lable>
+        <input class="text-input__Input-sc-16mtj2o-0 hBPhBk input PII" name="Name" id="de77b7ff-bd21-465d-bd9d-027a277890f7" placeholder="" autocomplete="off" data-test-id="Name-test-id" value="">
+        <br>
+        <label for="Name">Sky example (Name): </lable>
+          <input class="text-input__Input-sc-16mtj2o-0 hBPhBk input" name="Name" id="de77b7ff-bd21-465d-bd9d-027a277890f7" placeholder="" autocomplete="off" data-test-id="Name-test-id" value="">
+          <br>
+          <br>
+          <label for="fname">First name:</label>
+          <br>
+          <input type="text" id="fname" name="fname" data-protected="true">
+          <br>
+          <label for="lname">Last name:</label>
+          <br>
+          <input type="text" id="lname" name="lname" class="PII">
+          <br>
+          <label for="abv">abc abv:</label>
+          <br>
+          <input type="text" id="abv" name="abv">
+          <br>
+          <br>
+          <input type="submit" value="Submit" </form>
+          <br>
+          <br>
+          <br>
+          <h1>Sky Replication form</h1>
+          <form class="box__Box-eb0ezq-0 iIkZZy">
+            <div class="FieldRow-kipxiv-0 cbtcfe">
+              <label for="c9cf4b85-2628-48dd-b334-8fff784aa550" class="PrimaryLabel__Label-dt3lcj-0 dfCNdY primary-label required">Name</label>
+              <input class="text-input__Input-sc-16mtj2o-0 hBPhBk input PII" name="Name" id="c9cf4b85-2628-48dd-b334-8fff784aa550" placeholder="" autocomplete="off" data-test-id="Name-test-id" value="">
+            </div>
+            <div class="FieldRow-kipxiv-0 cbtcfe">
+              <label for="74b75d0e-a401-44a2-81f6-90dc6e4f42c6" class="PrimaryLabel__Label-dt3lcj-0 dfCNdY primary-label required">Email address</label>
+              <input class="text-input__Input-sc-16mtj2o-0 hBPhBk input PII" name="yourEmail" id="74b75d0e-a401-44a2-81f6-90dc6e4f42c6" placeholder="" autocomplete="off" data-test-id="Email address-test-id" value="">
+            </div>
+            <div class="FieldRow-kipxiv-0 cbtcfe">
+              <label for="28d6a648-6f7d-416f-a5d1-c1ce72d1c244" class="PrimaryLabel__Label-dt3lcj-0 dfCNdY primary-label false">Phone number</label>
+              <span id="28d6a648-6f7d-416f-a5d1-c1ce72d1c244-additional" class="text__Text-sc-1u9gciq-0 eGcgIq additional-label">Please include country code</span>
+              <input class="text-input__Input-sc-16mtj2o-0 ktLQCI input PII" name="yourPhone" id="28d6a648-6f7d-416f-a5d1-c1ce72d1c244" placeholder="" autocomplete="off" data-test-id="Phone number-test-id" value="">
+            </div>
+            <div class="FieldRow-kipxiv-0 cbtcfe">
+              <label for="b305c8ca-b443-4974-8171-994f8b9d8a27" class="PrimaryLabel__Label-dt3lcj-0 dfCNdY primary-label false">Which Sky territory does this affect?</label>
+              <select id="b305c8ca-b443-4974-8171-994f8b9d8a27" class="text-input__Input-sc-16mtj2o-0 hBPhBk input PII" name="SkyTerritory">
+                <option value="Default" disabled="">Please select an option</option>
+                <option value="Sky UK">Sky UK</option>
+                <option value="Sky Deutschland">Sky Deutschland</option>
+                <option value="Sky Italia">Sky Italia</option>
+                <option value="Sky ROI">Sky ROI</option>
+                <option value="All">All</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="FieldRow-kipxiv-0 cbtcfe">
+              <label for="5619cf69-0dc7-480a-8df1-ec434a9410e8" class="PrimaryLabel__Label-dt3lcj-0 dfCNdY primary-label required">Which Sky product/service does this relate to?</label>
+              <select id="5619cf69-0dc7-480a-8df1-ec434a9410e8" class="text-input__Input-sc-16mtj2o-0 hBPhBk input PII" name="SkyProductService">
+                <option value="Default" disabled="">Please select an option</option>
+                <option value="Sky Sports">Sky Sports</option>
+                <option value="Sky.com">Sky.com</option>
+                <option value="Sky Mobile">Sky Mobile</option>
+                <option value="Sky Q">Sky Q</option>
+                <option value="NOW TV">NOW TV</option>
+                <option value="Sky Ticket">Sky Ticket</option>
+                <option value="Sky Store">Sky Store</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="FieldRow-kipxiv-0 cbtcfe">
+              <label for="40069a1b-b7b0-4ec8-97f0-43b46608d188" class="PrimaryLabel__Label-dt3lcj-0 dfCNdY primary-label false">Please add the URL of the impacted service if relevant</label>
+              <input class="text-input__Input-sc-16mtj2o-0 hBPhBk input PII" name="URL" id="40069a1b-b7b0-4ec8-97f0-43b46608d188" placeholder="" autocomplete="off" data-test-id="Please add the URL of the impacted service if relevant-test-id" value="">
+            </div>
+            <div class="FieldRow-kipxiv-0 cbtcfe">
+              <label for="2eb57baf-5c90-4c90-87d0-ef28974d51d3" class="PrimaryLabel__Label-dt3lcj-0 dfCNdY primary-label required">Please select the vulnerability type from this list</label>
+              <select id="2eb57baf-5c90-4c90-87d0-ef28974d51d3" class="text-input__Input-sc-16mtj2o-0 hBPhBk input PII" name="VulnerabilityType">
+                <option value="Default" disabled="">Please select</option>
+                <option value="SQL Injection">SQL Injection</option>
+                <option value="Cross Site Scripting (XSS)">Cross Site Scripting (XSS)</option>
+                <option value="Other type of code/command injection (LDAP, OS, etc.)">Other type of code/command injection (LDAP, OS, etc.)</option>
+                <option value="SSL-related issues">SSL-related issues</option>
+                <option value="Sensitive data">Sensitive data</option>
+                <option value="Exposure">Exposure</option>
+                <option value="Underprotected APIs">Underprotected APIs</option>
+                <option value="Cross site request forgery (CSRF)">Cross site request forgery (CSRF)</option>
+                <option value="Local or remote file inclusion">Local or remote file inclusion</option>
+                <option value="Authentication issues">Authentication issues</option>
+                <option value="Remote code execution">Remote code execution</option>
+                <option value="Authorisation issues">Authorisation issues</option>
+                <option value="Privilege escalation">Privilege escalation</option>
+                <option value="Missing headers">Missing headers</option>
+                <option value="Unrestricted file upload">Unrestricted file upload</option>
+                <option value="Outdated software">Outdated software</option>
+                <option value="Session related issues">Session related issues</option>
+                <option value="External services available">External services available</option>
+                <option value="Code injection">Code injection</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="FieldRow-kipxiv-0 cbtcfe">
+              <label for="e28ea51a-534f-4031-8e2e-61d62fc08081" class="PrimaryLabel__Label-dt3lcj-0 dfCNdY primary-label required">Details of the issues identified</label>
+              <textarea class="text-input__Input-sc-16mtj2o-0 hBPhBk input PII" rows="4" name="IssueDetails" id="e28ea51a-534f-4031-8e2e-61d62fc08081" placeholder="" autocomplete="off" data-test-id="Details of the issues identified-test-id"></textarea>
+            </div>
+            <div class="FieldRow-kipxiv-0 cbtcfe">
+              <label for="d2d41f53-1abd-4cfb-8ebd-67d51d2b2d47" class="PrimaryLabel__Label-dt3lcj-0 dfCNdY primary-label required">Steps to reproduce</label>
+              <span id="d2d41f53-1abd-4cfb-8ebd-67d51d2b2d47-additional" class="text__Text-sc-1u9gciq-0 eGcgIq additional-label">Please detail the steps to reproduce the vulnerability</span>
+              <textarea class="text-input__Input-sc-16mtj2o-0 ktLQCI input PII" rows="4" name="StepsToReproduce" id="d2d41f53-1abd-4cfb-8ebd-67d51d2b2d47" placeholder="" autocomplete="off" data-test-id="Steps to reproduce-test-id"></textarea>
+            </div>
+            <div class="FieldRow-kipxiv-0 cbtcfe">
+              <label for="c79078d5-830b-43a6-bc6e-cd9ef9cd9f3b" class="PrimaryLabel__Label-dt3lcj-0 dfCNdY primary-label required">Is the vulnerability known to anyone other than yourself?</label>
+              <span id="c79078d5-830b-43a6-bc6e-cd9ef9cd9f3b-additional" class="text__Text-sc-1u9gciq-0 eGcgIq additional-label">If yes, please let us know approx. how many people</span>
+              <select id="c79078d5-830b-43a6-bc6e-cd9ef9cd9f3b" class="text-input__Input-sc-16mtj2o-0 ktLQCI input PII" name="VulnerabilityAwareness">
+                <option value="Default" disabled="">Please select an option</option>
+                <option value="No">No</option>
+                <option value="Yes - Small group">Yes - Small group</option>
+                <option value="Yes - Large group">Yes - Large group</option>
+                <option value="Yes - On the internet">Yes - On the internet</option>
+              </select>
+            </div>
+            <div class="FieldRow-kipxiv-0 cbtcfe">
+              <label for="2e9335c2-24df-4c22-a9d1-dc5c147f93a8" class="PrimaryLabel__Label-dt3lcj-0 dfCNdY primary-label false">Related sources</label>
+              <span id="2e9335c2-24df-4c22-a9d1-dc5c147f93a8-additional" class="text__Text-sc-1u9gciq-0 eGcgIq additional-label">Please provide details to any relevant sources of information on the internet specific to this disclosure (e.g. Twitter feeds, Facebook posts, News articles, forum posts)</span>
+              <textarea class="text-input__Input-sc-16mtj2o-0 ktLQCI input PII" rows="4" name="RelatedSources" id="2e9335c2-24df-4c22-a9d1-dc5c147f93a8" placeholder="" autocomplete="off" data-test-id="Related sources-test-id"></textarea>
+            </div>
+            <div class="FieldRow-kipxiv-0 cbtcfe">
+              <label for="5f6c4273-de4e-4cee-ab4e-359aa5b256eb" class="PrimaryLabel__Label-dt3lcj-0 dfCNdY primary-label false">Anything else?</label>
+              <span id="5f6c4273-de4e-4cee-ab4e-359aa5b256eb-additional" class="text__Text-sc-1u9gciq-0 eGcgIq additional-label">Is there anything else you would like to tell us about this vulnerability?</span>
+              <textarea class="text-input__Input-sc-16mtj2o-0 ktLQCI input PII" rows="4" name="AnythingElse" id="5f6c4273-de4e-4cee-ab4e-359aa5b256eb" placeholder="" autocomplete="off" data-test-id="Anything else?-test-id"></textarea>
+            </div>
+            <div class="box__Box-eb0ezq-0 dDQsyl">
+              <button class="button__Button-t5gfjf-0 dTlfPI">Submit</button>
+            </div>
+            <div class="RichText__Wrapper-d3vm7q-0 jHYmRX">
+              <p>By submitting a report to Sky, you agree to keep the subject matter of the report, as well as all subsequent related conversations with Sky, strictly confidential. This is so we have the opportunity to investigate and take action as needed.</p>
+            </div>
+          </form>
+  </body>
 </html>
