@@ -1,0 +1,395 @@
+/*!
+TAG V5.84.7321, smct.tag-sky.com 
+Copyright 2012-2022 Smarter Click Technology Ltd
+*/
+if(typeof window.$smctResources !== 'undefined'){    console.warn('Cannot load Tag Resources more than once...');}else{window.$smctResources = function(){			var urls = {		tag_url : 'https://js.smct.io/t/tag-v5.84.js',		overlays_url : 'https://js.smct.io/o/overlays-v5.84.js',		overlays_data_url : 'https://smct.co/ov5/load/',		smc_debug_url :  '',		client_debug_url : 'https://js.smct.io/dp/clientDebug-v2.00.js',		basket_backup_script : 'https://js.smct.io/bb/bb-v3.07.js',		basket_backup_endpoint : 'https://ep.smct.co/bb-ep/',		selector_tool_script : 'https://js.smct.io/s/selector-v1.00.js',		selector_tool_endpoint : '',		smarter_codes_script: 'https://js.smct.io/sc/smartercodes-v1.06.js',		smarter_codes_endpoint: 'https://ep.smct.co/smcdz-ep/',		smc_jq : 'https://js.smct.io/jq/smcJQ-v3.4.1.js',		ls_endpoint : 'https://smct.co/lse1.0.html',		notification_app : 'https://js.smct.io/n/notifications-v1.01.js',		notification_checker : 'https://ep.smct.co/n-c/',		px2a_source_url: 'https://js.smct.io/e/events-1.6.0.min.js',		px2b_endpoint_url: 'https://events.smct.co/',		host : 'https://smct.co/',		pxt_domain : 'https://ep.smct.co/',		tag_data_url : 'https://smct.co/tm/data/',		overlays_engage_url : 'https://ep.smct.co/ov4/e/',		insights_url : 'https://ep.smct.co/insights/',		url_track : 'https://ep.smct.co/ut/',		client_debug_data : 'https://smct.co/cldbData/',};		var getURL = function( key, additional ){		return urls[ key ];	}; 	var getTagLoadedTime = function(){		var microtime = 1665413902.4169;		return Math.round(microtime*1000);	}; 		var tryer = function (expression , outputOnErr) {	 		try {			return eval(expression);		} catch (err) {			return outputOnErr === undefined ? '' : outputOnErr;		}	 	};		var evalOverride = function( expression ){		return tryer( expression, false );	};		var mainEvals = {		tag_custom_code : null,		overlay_shared_code : null,		ae_code : null,	};		var runCode = function( key, isDebug ){				if( mainEvals[ key ] ){			try{				eval(  mainEvals[ key ]  );			} catch( e ){				if( isDebug ){					console.warn( key + ' RUN Error! ', e);				}			}		}	 		};		return {		getURL : getURL,		getTagLoadedTime : getTagLoadedTime,		evalOverride : evalOverride,		tryer : tryer,		runCode : runCode,		staticFiles : 0, 	};}();}if(typeof window.$smctData !== 'undefined'){console.warn('Cannot load Tag Data more than once...');}else{window.$smctData = {
+	a:1, b:1, h:'https://smct.co/', o:'eyJ2ZXJzaW9uIjoiNS44NCIsImlkIjoxNTk3LCJuYW1lIjoic2t5LmNvbSIsImNzc19hbmltcyI6Ii5zbWN0LWFuaW1hdGVkey13ZWJraXQtYW5pbWF0aW9uLWR1cmF0aW9uOjFzO2FuaW1hdGlvbi1kdXJhdGlvbjoxczstd2Via2l0LWFuaW1hdGlvbi1maWxsLW1vZGU6Ym90aDthbmltYXRpb24tZmlsbC1tb2RlOmJvdGh9LnNtY3QtYW5pbWF0ZWQuc21jdC1pbmZpbml0ZXstd2Via2l0LWFuaW1hdGlvbi1pdGVyYXRpb24tY291bnQ6aW5maW5pdGU7YW5pbWF0aW9uLWl0ZXJhdGlvbi1jb3VudDppbmZpbml0ZX0uc21jdC1hbmltYXRlZC5zbWN0LWhpbmdley13ZWJraXQtYW5pbWF0aW9uLWR1cmF0aW9uOjJzO2FuaW1hdGlvbi1kdXJhdGlvbjoyc30uc21jdC1hbmltYXRlZC5zbWN0LWJvdW5jZUluLC5zbWN0LWFuaW1hdGVkLnNtY3QtYm91bmNlT3V0LC5zbWN0LWFuaW1hdGVkLnNtY3QtZmxpcE91dFgsLnNtY3QtYW5pbWF0ZWQuc21jdC1mbGlwT3V0WXstd2Via2l0LWFuaW1hdGlvbi1kdXJhdGlvbjouNzVzO2FuaW1hdGlvbi1kdXJhdGlvbjouNzVzfUAtd2Via2l0LWtleWZyYW1lcyBzbWN0LXJ1YmJlckJhbmR7MCV7LXdlYmtpdC10cmFuc2Zvcm06c2NhbGVYKDEpO3RyYW5zZm9ybTpzY2FsZVgoMSl9MzAley13ZWJraXQtdHJhbnNmb3JtOnNjYWxlM2QoMS4yNSwuNzUsMSk7dHJhbnNmb3JtOnNjYWxlM2QoMS4yNSwuNzUsMSl9NDAley13ZWJraXQtdHJhbnNmb3JtOnNjYWxlM2QoLjc1LDEuMjUsMSk7dHJhbnNmb3JtOnNjYWxlM2QoLjc1LDEuMjUsMSl9NTAley13ZWJraXQtdHJhbnNmb3JtOnNjYWxlM2QoMS4xNSwuODUsMSk7dHJhbnNmb3JtOnNjYWxlM2QoMS4xNSwuODUsMSl9NjUley13ZWJraXQtdHJhbnNmb3JtOnNjYWxlM2QoLjk1LDEuMDUsMSk7dHJhbnNmb3JtOnNjYWxlM2QoLjk1LDEuMDUsMSl9NzUley13ZWJraXQtdHJhbnNmb3JtOnNjYWxlM2QoMS4wNSwuOTUsMSk7dHJhbnNmb3JtOnNjYWxlM2QoMS4wNSwuOTUsMSl9dG97LXdlYmtpdC10cmFuc2Zvcm06c2NhbGVYKDEpO3RyYW5zZm9ybTpzY2FsZVgoMSl9fUBrZXlmcmFtZXMgc21jdC1ydWJiZXJCYW5kezAley13ZWJraXQtdHJhbnNmb3JtOnNjYWxlWCgxKTt0cmFuc2Zvcm06c2NhbGVYKDEpfTMwJXstd2Via2l0LXRyYW5zZm9ybTpzY2FsZTNkKDEuMjUsLjc1LDEpO3RyYW5zZm9ybTpzY2FsZTNkKDEuMjUsLjc1LDEpfTQwJXstd2Via2l0LXRyYW5zZm9ybTpzY2FsZTNkKC43NSwxLjI1LDEpO3RyYW5zZm9ybTpzY2FsZTNkKC43NSwxLjI1LDEpfTUwJXstd2Via2l0LXRyYW5zZm9ybTpzY2FsZTNkKDEuMTUsLjg1LDEpO3RyYW5zZm9ybTpzY2FsZTNkKDEuMTUsLjg1LDEpfTY1JXstd2Via2l0LXRyYW5zZm9ybTpzY2FsZTNkKC45NSwxLjA1LDEpO3RyYW5zZm9ybTpzY2FsZTNkKC45NSwxLjA1LDEpfTc1JXstd2Via2l0LXRyYW5zZm9ybTpzY2FsZTNkKDEuMDUsLjk1LDEpO3RyYW5zZm9ybTpzY2FsZTNkKDEuMDUsLjk1LDEpfXRvey13ZWJraXQtdHJhbnNmb3JtOnNjYWxlWCgxKTt0cmFuc2Zvcm06c2NhbGVYKDEpfX0uc21jdC1ydWJiZXJCYW5key13ZWJraXQtYW5pbWF0aW9uLW5hbWU6c21jdC1ydWJiZXJCYW5kO2FuaW1hdGlvbi1uYW1lOnNtY3QtcnViYmVyQmFuZH1ALXdlYmtpdC1rZXlmcmFtZXMgc21jdC1zaGFrZXswJSx0b3std2Via2l0LXRyYW5zZm9ybTp0cmFuc2xhdGVaKDApO3RyYW5zZm9ybTp0cmFuc2xhdGVaKDApfTEwJSwzMCUsNTAlLDcwJSw5MCV7LXdlYmtpdC10cmFuc2Zvcm06dHJhbnNsYXRlM2QoLTEwcHgsMCwwKTt0cmFuc2Zvcm06dHJhbnNsYXRlM2QoLTEwcHgsMCwwKX0yMCUsNDAlLDYwJSw4MCV7LXdlYmtpdC10cmFuc2Zvcm06dHJhbnNsYXRlM2QoMTBweCwwLDApO3RyYW5zZm9ybTp0cmFuc2xhdGUzZCgxMHB4LDAsMCl9fUBrZXlmcmFtZXMgc21jdC1zaGFrZXswJSx0b3std2Via2l0LXRyYW5zZm9ybTp0cmFuc2xhdGVaKDApO3RyYW5zZm9ybTp0cmFuc2xhdGVaKDApfTEwJSwzMCUsNTAlLDcwJSw5MCV7LXdlYmtpdC10cmFuc2Zvcm06dHJhbnNsYXRlM2QoLTEwcHgsMCwwKTt0cmFuc2Zvcm06dHJhbnNsYXRlM2QoLTEwcHgsMCwwKX0yMCUsNDAlLDYwJSw4MCV7LXdlYmtpdC10cmFuc2Zvcm06dHJhbnNsYXRlM2QoMTBweCwwLDApO3RyYW5zZm9ybTp0cmFuc2xhdGUzZCgxMHB4LDAsMCl9fS5zbWN0LXNoYWtley13ZWJraXQtYW5pbWF0aW9uLW5hbWU6c21jdC1zaGFrZTthbmltYXRpb24tbmFtZTpzbWN0LXNoYWtlfUAtd2Via2l0LWtleWZyYW1lcyBzbWN0LXB1bHNlezAley13ZWJraXQtdHJhbnNmb3JtOnNjYWxlWCgxKTt0cmFuc2Zvcm06c2NhbGVYKDEpfTUwJXstd2Via2l0LXRyYW5zZm9ybTpzY2FsZTNkKDEuMDUsMS4wNSwxLjA1KTt0cmFuc2Zvcm06c2NhbGUzZCgxLjA1LDEuMDUsMS4wNSl9dG97LXdlYmtpdC10cmFuc2Zvcm06c2NhbGVYKDEpO3RyYW5zZm9ybTpzY2FsZVgoMSl9fUBrZXlmcmFtZXMgc21jdC1wdWxzZXswJXstd2Via2l0LXRyYW5zZm9ybTpzY2FsZVgoMSk7dHJhbnNmb3JtOnNjYWxlWCgxKX01MCV7LXdlYmtpdC10cmFuc2Zvcm06c2NhbGUzZCgxLjA1LDEuMDUsMS4wNSk7dHJhbnNmb3JtOnNjYWxlM2QoMS4wNSwxLjA1LDEuMDUpfXRvey13ZWJraXQtdHJhbnNmb3JtOnNjYWxlWCgxKTt0cmFuc2Zvcm06c2NhbGVYKDEpfX0uc21jdC1wdWxzZXstd2Via2l0LWFuaW1hdGlvbi1uYW1lOnNtY3QtcHVsc2U7YW5pbWF0aW9uLW5hbWU6c21jdC1wdWxzZX1ALXdlYmtpdC1rZXlmcmFtZXMgc21jdC1mbGFzaHswJSw1MCUsdG97b3BhY2l0eToxfTI1JSw3NSV7b3BhY2l0eTowfX1Aa2V5ZnJhbWVzIHNtY3QtZmxhc2h7MCUsNTAlLHRve29wYWNpdHk6MX0yNSUsNzUle29wYWNpdHk6MH19LnNtY3QtZmxhc2h7LXdlYmtpdC1hbmltYXRpb24tbmFtZTpzbWN0LWZsYXNoO2FuaW1hdGlvbi1uYW1lOnNtY3QtZmxhc2h9IiwiY29uZmlnIjp7InRhZ1JlZnJlc2hJRCI6MCwialF1ZXJ5Rm9yY2VMb2FkIjowLCJpZ25vcmVIYXNoIjoxLCJjYXNlU2Vuc2l0aXZlIjowLCJpbnNpZ2h0cyI6MCwiYmxvY2tJZnJhbWUiOjAsInB4VHJhY2tPZmYiOjAsInJ1bGVzVVRDIjowLCJmb3JjZU9uRGVidWciOjEsInB4QXBjIjoxLCJPdlJlcUludCI6MCwiRmlyc3RDaGFyQXNjaWlGaXgiOjAsImVuY29kZUNvb2tpZXMiOjAsInJlZkV4YWN0TWF0Y2giOjAsIm1pZ3JhdGVDb29raWVzVG9Mb2NhbFN0b3JhZ2UiOjAsImVuZm9yY2VTcmkiOjAsInRpbWVvdXQiOjEsInNjYW5uZXJUaW1lIjozMDAsImNvb2tpZU1heEFnZURheXMiOiIiLCJvdkNvb2tpZUhpc3RvcnkiOiIiLCJzcmNfY29faW8iOiJhdXRvIiwiaW5zaWdodHNfYXV0byI6IiIsImxzM3JkcHR5VUlEIjoxLCJkeW5hbWljRWxlbWVudHMiOnsiQ29uZmlybWF0aW9uUGFnZSI6eyJhY3RpdmUiOjEsImV4cG9ydCI6MSwiY29va2llU2VhcmNoIjoiIiwicmVhZEN1c3RvbVZhck9yRnVuYyI6IiIsInN0cmluZ3MiOiJcL2NvbmZpcm1hdGlvbiIsInVybENvbnRhaW5zIjoxLCJodG1sQ29udGFpbnMiOjAsInNlYXJjaERMT2JqZWN0IjoiIiwic2VhcmNoRExLZXkiOiIiLCJzZWxlY3RvciI6IiIsInVzZUxhc3QiOjAsImNvb2tpZUJhY2t1cCI6MCwidHlwZSI6InRleHQiLCJhdHRyIjoiIiwiY3VzdG9tT3ZlclJpZGUiOiIifSwiSXRlbVB1cmNoYXNlZCI6eyJhY3RpdmUiOjEsImV4cG9ydCI6MSwiY29va2llU2VhcmNoIjoiIiwicmVhZEN1c3RvbVZhck9yRnVuYyI6IiIsInN0cmluZ3MiOiIiLCJ1cmxDb250YWlucyI6MCwiaHRtbENvbnRhaW5zIjowLCJzZWFyY2hETE9iamVjdCI6IiIsInNlYXJjaERMS2V5IjoiIiwic2VsZWN0b3IiOiIjcm9vdCA+IGRpdi5jLWJhY2tncm91bmQtLWFsdCA+IGRpdiA+IGRpdiA+IGRpdi5jLW9yZGVyLXN1bW1hcnlfX2JyZWFrZG93bi5jLW9yZGVyLXN1bW1hcnlfX21haW4gPiBkaXYgPiB0YWJsZTpudGgtY2hpbGQoMSkgPiB0Ym9keSA+IHRyOm50aC1jaGlsZCgxKSA+IHRkOm50aC1jaGlsZCgxKSA+IHNwYW4iLCJ1c2VMYXN0IjowLCJjb29raWVCYWNrdXAiOjEsInR5cGUiOiJ0ZXh0IiwiYXR0ciI6IiIsImN1c3RvbU92ZXJSaWRlIjoiIiwiZnVuY3MiOlt7InR5cGUiOiJzcGVjaWFsIiwidmFscyI6WyIiLCIiXX1dfSwiU2t5QWIiOnsiYWN0aXZlIjoxLCJleHBvcnQiOjEsImNvb2tpZVNlYXJjaCI6IiIsInJlYWRDdXN0b21WYXJPckZ1bmMiOiJTa3lBQiIsInN0cmluZ3MiOiIiLCJ1cmxDb250YWlucyI6MCwiaHRtbENvbnRhaW5zIjowLCJzZWFyY2hETE9iamVjdCI6IiIsInNlYXJjaERMS2V5IjoiIiwic2VsZWN0b3IiOiIiLCJ1c2VMYXN0IjowLCJjb29raWVCYWNrdXAiOjAsInR5cGUiOiJ0ZXh0IiwiYXR0ciI6IiIsImN1c3RvbU92ZXJSaWRlIjoiIn0sIk9yZGVySWQiOnsiYWN0aXZlIjoxLCJleHBvcnQiOjEsImNvb2tpZVNlYXJjaCI6IiIsInJlYWRDdXN0b21WYXJPckZ1bmMiOiJPcmRlcklkIiwic3RyaW5ncyI6IiIsInVybENvbnRhaW5zIjowLCJodG1sQ29udGFpbnMiOjAsInNlYXJjaERMT2JqZWN0IjoiIiwic2VhcmNoRExLZXkiOiIiLCJzZWxlY3RvciI6IiIsInVzZUxhc3QiOjAsImNvb2tpZUJhY2t1cCI6MCwidHlwZSI6InRleHQiLCJhdHRyIjoiIiwiY3VzdG9tT3ZlclJpZGUiOiIifSwiQmFza2V0SXRlbSI6eyJhY3RpdmUiOjEsImV4cG9ydCI6MSwiY29va2llU2VhcmNoIjoiIiwicmVhZEN1c3RvbVZhck9yRnVuYyI6IiIsInN0cmluZ3MiOiIiLCJ1cmxDb250YWlucyI6MCwiaHRtbENvbnRhaW5zIjowLCJzZWFyY2hETE9iamVjdCI6IiIsInNlYXJjaERMS2V5IjoiIiwic2VsZWN0b3IiOiJ0YWJsZS5jLXByaWNlLXN1bW1hcnk6bnRoLWNoaWxkKDEpIC5jLXByaWNlLXN1bW1hcnlfX2l0ZW1zIHRyOm50aC1jaGlsZCgxKSAuYy1wcmljZS1zdW1tYXJ5X19pdGVtLXRleHQiLCJ1c2VMYXN0IjowLCJjb29raWVCYWNrdXAiOjEsInR5cGUiOiJ0ZXh0IiwiYXR0ciI6IiIsImN1c3RvbU92ZXJSaWRlIjoiIn0sIkJyb2FkYmFuZEN1cnJlbnRseVNlbGVjdGVkIjp7ImFjdGl2ZSI6MSwiZXhwb3J0IjoxLCJjb29raWVTZWFyY2giOiIiLCJyZWFkQ3VzdG9tVmFyT3JGdW5jIjoiQnJvYWRiYW5kQ3VycmVudGx5U2VsZWN0ZWQiLCJzdHJpbmdzIjoiIiwidXJsQ29udGFpbnMiOjAsImh0bWxDb250YWlucyI6MCwic2VhcmNoRExPYmplY3QiOiIiLCJzZWFyY2hETEtleSI6IiIsInNlbGVjdG9yIjoiIiwidXNlTGFzdCI6MCwiY29va2llQmFja3VwIjowLCJ0eXBlIjoidGV4dCIsImF0dHIiOiIiLCJjdXN0b21PdmVyUmlkZSI6IiJ9LCJCcm9hZGJhbmRGYXN0ZXN0QXZhaWxhYmxlIjp7ImFjdGl2ZSI6MSwiZXhwb3J0IjoxLCJjb29raWVTZWFyY2giOiIiLCJyZWFkQ3VzdG9tVmFyT3JGdW5jIjoiQnJvYWRiYW5kRmFzdGVzdEF2YWlsYWJsZSIsInN0cmluZ3MiOiIiLCJ1cmxDb250YWlucyI6MCwiaHRtbENvbnRhaW5zIjowLCJzZWFyY2hETE9iamVjdCI6IiIsInNlYXJjaERMS2V5IjoiIiwic2VsZWN0b3IiOiIiLCJ1c2VMYXN0IjowLCJjb29raWVCYWNrdXAiOjAsInR5cGUiOiJ0ZXh0IiwiYXR0ciI6IiIsImN1c3RvbU92ZXJSaWRlIjoiIn0sIkJyb2FkYmFuZFJ1bGVTd2l0Y2hlciI6eyJhY3RpdmUiOjEsImV4cG9ydCI6MSwiY29va2llU2VhcmNoIjoiIiwicmVhZEN1c3RvbVZhck9yRnVuYyI6IkJyb2FkYmFuZFJ1bGVTd2l0Y2hlciIsInN0cmluZ3MiOiIiLCJ1cmxDb250YWlucyI6MCwiaHRtbENvbnRhaW5zIjowLCJzZWFyY2hETE9iamVjdCI6IiIsInNlYXJjaERMS2V5IjoiIiwic2VsZWN0b3IiOiIiLCJ1c2VMYXN0IjowLCJjb29raWVCYWNrdXAiOjAsInR5cGUiOiJ0ZXh0IiwiYXR0ciI6IiIsImN1c3RvbU92ZXJSaWRlIjoiIn0sIlNlbGVjdGVkU3VwZXJmYXN0QnJvYWRiYW5kIjp7ImFjdGl2ZSI6MSwiZXhwb3J0IjoxLCJjb29raWVTZWFyY2giOiIiLCJyZWFkQ3VzdG9tVmFyT3JGdW5jIjoiU2VsZWN0ZWRTdXBlcmZhc3RCcm9hZGJhbmQiLCJzdHJpbmdzIjoiIiwidXJsQ29udGFpbnMiOjAsImh0bWxDb250YWlucyI6MCwic2VhcmNoRExPYmplY3QiOiIiLCJzZWFyY2hETEtleSI6IiIsInNlbGVjdG9yIjoiIiwidXNlTGFzdCI6MCwiY29va2llQmFja3VwIjowLCJ0eXBlIjoidGV4dCIsImF0dHIiOiIiLCJjdXN0b21PdmVyUmlkZSI6IiJ9fSwicmVmcyI6eyI0Ijp7InUiOiJhd2M9IiwiZCI6IjEifX0sImRiIjowLCJvdmVybGF5c191cmwiOiJodHRwczpcL1wvanMuc21jdC5pb1wvb1wvb3ZlcmxheXMtdjUuODQuanMiLCJvdmVybGF5c19kYXRhX3VybCI6Imh0dHBzOlwvXC9zbWN0LmNvXC9vdjVcL2xvYWRcLyIsIm92ZXJsYXlzX2VuZ2FnZV91cmwiOiJodHRwczpcL1wvZXAuc21jdC5jb1wvb3Y0XC9lXC8iLCJpbnNpZ2h0c191cmwiOiJodHRwczpcL1wvZXAuc21jdC5jb1wvaW5zaWdodHNcLyIsImNsaWVudF9kZWJ1Z191cmwiOiJodHRwczpcL1wvanMuc21jdC5pb1wvZHBcL2NsaWVudERlYnVnLXYyLjAwLmpzIiwiY2xpZW50X2RlYnVnX2RhdGEiOiJodHRwczpcL1wvc21jdC5jb1wvY2xkYkRhdGFcLyIsImxzX2VuZHBvaW50IjoiaHR0cHM6XC9cL3NtY3QuY29cL2xzZTEuMC5odG1sIiwidGFnX3ByZXZpZXciOiJkZWZhdWx0IiwicHh0X3ZlcnNpb24iOiIyYSIsInB4dF9pZGVudGl0eV9wb29sX2lkIjoiZXUtd2VzdC0xOjlhMjhjYmRlLTM4M2UtNGM1Yi1iZGRkLTNiMzdhOWE3ZDFiZSJ9LCJydWxlc0xpc3QiOlt7InJ1bGVuYW1lIjoiTG9uZ3RhaWxcL0JBVSAtIFN1cGVyZmFzdCBEaXJlY3QgUHJpY2luZyAtIFx1MDBhMzkuOTUgc2V0IHVwIGZlZXMiLCJ1cmxzIjp7ImJsYWNrbGlzdCI6W10sIndoaXRlbGlzdCI6WyIxMDgwNTM5IiwiNjIxNDM1IiwiMTA3MzMzNSIsIjk1Mzc0IiwiODE5NTgzIiwiNDY2NzU3IiwiNzk2MTY1IiwiODY4ODYiLCIxMDg0NTc3IiwiNDY2MzUzIiwiOTEyMjUzIiwiMTAyMzU2IiwiNjk2MjA1IiwiMzI5OTkxIiwiNTk5MjUxIiwiMTU3MTUwIiwiNzIzMzE1IiwiODQxMDI3IiwiMTAyNjYxOCIsIjk5OTk1OSIsIjEwMjg2ODAiLCIyNjgwMjMiLCI4MDMzOCIsIjE3MzU2OSIsIjU4OTcwIiwiNDg5Nzk3IiwiMTA2MTQwIl19LCJyZWZzIjp7ImJsYWNrbGlzdCI6W10sIndoaXRlbGlzdCI6W119LCJsb2NzIjp7ImJsYWNrbGlzdCI6W10sIndoaXRlbGlzdCI6W119LCJkeW5hbWljRWxlbWVudFJ1bGVzIjp7IlNlbGVjdGVkU3VwZXJmYXN0QnJvYWRiYW5kIjp7ImlzMSI6InRydWUiLCJ2YWwxIjoiIiwiYW5kT3IiOiIiLCJpczIiOiI+IiwidmFsMiI6IiJ9fSwidmlzaXRvcnMiOiJhbGwiLCJub3RpZmljYXRpb25zQWNjZXB0ZWQiOiJhbnkiLCJkZWxheSI6IiIsInBhZ2VWaWV3cyI6IiIsImZpbHRlciI6IiIsImZpbHRlckdyb3VwIjoiIiwidGltZVN0YXJ0IjoiMjAyMy0wNi0yOCAyMzo1OTo1OSIsInRpbWVFbmQiOiIyMDIyLTA4LTE4IDIzOjU5OjU5Iiwib3ZlcmxheXMiOnsiZGVza3RvcCI6eyJpZCI6ODMxMTl9LCJtb2JpbGUiOnsiaWQiOjgzNDA5fSwidGFibGV0Ijp7ImlkIjo4MzQxMH19fSx7InJ1bGVuYW1lIjoiTG9uZ3RhaWxcL0JBVSAtIFN1cGVyZmFzdCBEaXJlY3QgUHJpY2luZyAtIFx1MDBhMzkuOTUgc2V0IHVwIGZlZXMgKEdIT1NUKSIsInVybHMiOnsiYmxhY2tsaXN0IjpbXSwid2hpdGVsaXN0IjpbIjEwODA1MzkiLCI2MjE0MzUiLCIxMDczMzM1IiwiOTUzNzQiLCI4MTk1ODMiLCI0NjY3NTciLCI3OTYxNjUiLCI4Njg4NiIsIjEwODQ1NzciLCI0NjYzNTMiLCI5MTIyNTMiLCIxMDIzNTYiLCI2OTYyMDUiLCIzMjk5OTEiLCI1OTkyNTEiLCIxNTcxNTAiLCI3MjMzMTUiLCI4NDEwMjciLCIxMDI2NjE4IiwiOTk5OTU5IiwiMTAyODY4MCIsIjI2ODAyMyIsIjgwMzM4IiwiMTczNTY5IiwiNTg5NzAiLCI0ODk3OTciLCIxMDYxNDAiXX0sInJlZnMiOnsiYmxhY2tsaXN0IjpbXSwid2hpdGVsaXN0IjpbXX0sImxvY3MiOnsiYmxhY2tsaXN0IjpbXSwid2hpdGVsaXN0IjpbXX0sImR5bmFtaWNFbGVtZW50UnVsZXMiOnsiU2VsZWN0ZWRTdXBlcmZhc3RCcm9hZGJhbmQiOnsiaXMxIjoidHJ1ZSIsInZhbDEiOiIiLCJhbmRPciI6IiIsImlzMiI6Ij4iLCJ2YWwyIjoiIn19LCJ2aXNpdG9ycyI6ImFsbCIsIm5vdGlmaWNhdGlvbnNBY2NlcHRlZCI6ImFueSIsImRlbGF5IjoiIiwicGFnZVZpZXdzIjoiIiwiZmlsdGVyIjoiIiwiZmlsdGVyR3JvdXAiOiIiLCJ0aW1lU3RhcnQiOiIyMDIzLTA2LTI4IDIzOjU5OjU5IiwidGltZUVuZCI6IjIwMjItMDgtMTggMjM6NTk6NTkiLCJvdmVybGF5cyI6eyJkZXNrdG9wIjp7ImlkIjo4NTI0MH0sIm1vYmlsZSI6eyJpZCI6ODUyNDF9LCJ0YWJsZXQiOnsiaWQiOjg1MjQyfX19LHsicnVsZW5hbWUiOiJTdXBlcmZhc3QgXHUwMGEzMjMgLSAwIHNldCB1cCBmZWVzIiwidXJscyI6eyJibGFja2xpc3QiOltdLCJ3aGl0ZWxpc3QiOlsiMTAwOTA4IiwiNTQ4NDAiLCI5MDM5NjUiLCIxMTMxMTQiLCIxMTMxMTMiLCI4MzE0NSIsIjYzNDgzIiwiNTQ5MTciLCI1MzQ5MyIsIjE5MTE0MSIsIjQ4OTczIiwiMTcyNzc3IiwiMTczNTY5IiwiNTg5NzAiLCIyNzYzOTciLCIxMDYxNDAiLCIxODYwOTEiLCI1NzkwNCIsIjQ4NDUwIiwiNjcwMzUiLCIxMTEzMDAiLCI4ODk0MSIsIjcxNTg1NSIsIjcxMzQxNSIsIjUxOTIzNyIsIjQ3ODA4MSJdfSwicmVmcyI6eyJibGFja2xpc3QiOltdLCJ3aGl0ZWxpc3QiOls0XX0sImxvY3MiOnsiYmxhY2tsaXN0IjpbXSwid2hpdGVsaXN0IjpbXX0sImR5bmFtaWNFbGVtZW50UnVsZXMiOnsiU2VsZWN0ZWRTdXBlcmZhc3RCcm9hZGJhbmQiOnsiaXMxIjoidHJ1ZSIsInZhbDEiOiIiLCJhbmRPciI6IiIsImlzMiI6Ij4iLCJ2YWwyIjoiIn0sIlNreUFiIjp7ImlzMSI6Ij09IiwidmFsMSI6InRlc3QtdjMtMSIsImFuZE9yIjoiIiwiaXMyIjoiPiIsInZhbDIiOiIifX0sInZpc2l0b3JzIjoiYWxsIiwibm90aWZpY2F0aW9uc0FjY2VwdGVkIjoiYW55IiwiZGVsYXkiOiIiLCJwYWdlVmlld3MiOiIiLCJmaWx0ZXIiOiIiLCJmaWx0ZXJHcm91cCI6IiIsInRpbWVTdGFydCI6IjIwMjItMDgtMjUgMTA6MTA6MDAiLCJ0aW1lRW5kIjoiIiwib3ZlcmxheXMiOnsiZGVza3RvcCI6eyJpZCI6ODc4MjR9LCJtb2JpbGUiOnsiaWQiOjg3ODI1fSwidGFibGV0Ijp7ImlkIjo4NzgyNn19fSx7InJ1bGVuYW1lIjoiU3VwZXJmYXN0IFx1MDBhMzIzIC0gMCBzZXQgdXAgZmVlcyAoR0hPU1QpIiwidXJscyI6eyJibGFja2xpc3QiOltdLCJ3aGl0ZWxpc3QiOlsiMTAwOTA4IiwiNTQ4NDAiLCI5MDM5NjUiLCIxMTMxMTQiLCIxMTMxMTMiLCI4MzE0NSIsIjYzNDgzIiwiNTQ5MTciLCI1MzQ5MyIsIjE5MTE0MSIsIjQ4OTczIiwiMTcyNzc3IiwiMTczNTY5IiwiNTg5NzAiLCIyNzYzOTciLCIxMDYxNDAiLCIxODYwOTEiLCI1NzkwNCIsIjQ4NDUwIiwiNjcwMzUiLCIxMTEzMDAiLCI4ODk0MSIsIjcxNTg1NSIsIjcxMzQxNSIsIjUxOTIzNyIsIjQ3ODA4MSJdfSwicmVmcyI6eyJibGFja2xpc3QiOltdLCJ3aGl0ZWxpc3QiOls0XX0sImxvY3MiOnsiYmxhY2tsaXN0IjpbXSwid2hpdGVsaXN0IjpbXX0sImR5bmFtaWNFbGVtZW50UnVsZXMiOnsiU2VsZWN0ZWRTdXBlcmZhc3RCcm9hZGJhbmQiOnsiaXMxIjoidHJ1ZSIsInZhbDEiOiIiLCJhbmRPciI6IiIsImlzMiI6Ij4iLCJ2YWwyIjoiIn0sIlNreUFiIjp7ImlzMSI6Ij09IiwidmFsMSI6ImNvbnRyb2wtdjMtMCIsImFuZE9yIjoiIiwiaXMyIjoiPiIsInZhbDIiOiIifX0sInZpc2l0b3JzIjoiYWxsIiwibm90aWZpY2F0aW9uc0FjY2VwdGVkIjoiYW55IiwiZGVsYXkiOiIiLCJwYWdlVmlld3MiOiIiLCJmaWx0ZXIiOiIiLCJmaWx0ZXJHcm91cCI6IiIsInRpbWVTdGFydCI6IjIwMjItMDgtMjUgMTA6MTA6MDAiLCJ0aW1lRW5kIjoiIiwib3ZlcmxheXMiOnsiZGVza3RvcCI6eyJpZCI6ODc4Mjd9LCJtb2JpbGUiOnsiaWQiOjg3ODI4fSwidGFibGV0Ijp7ImlkIjo4NzgyOX19fSx7InJ1bGVuYW1lIjoiU3VwZXJmYXN0IFx1MDBhMzI2IC0gMCBzZXQgdXAgZmVlcyAiLCJ1cmxzIjp7ImJsYWNrbGlzdCI6W10sIndoaXRlbGlzdCI6W119LCJyZWZzIjp7ImJsYWNrbGlzdCI6W10sIndoaXRlbGlzdCI6WzRdfSwibG9jcyI6eyJibGFja2xpc3QiOltdLCJ3aGl0ZWxpc3QiOltdfSwiZHluYW1pY0VsZW1lbnRSdWxlcyI6eyJTZWxlY3RlZFN1cGVyZmFzdEJyb2FkYmFuZCI6eyJpczEiOiJ0cnVlIiwidmFsMSI6IiIsImFuZE9yIjoiIiwiaXMyIjoiPiIsInZhbDIiOiIifSwiU2t5QWIiOnsiaXMxIjoiPT0iLCJ2YWwxIjoidGVzdC12My0xIiwiYW5kT3IiOiIiLCJpczIiOiI+IiwidmFsMiI6IiJ9fSwidmlzaXRvcnMiOiJhbGwiLCJub3RpZmljYXRpb25zQWNjZXB0ZWQiOiJhbnkiLCJkZWxheSI6IiIsInBhZ2VWaWV3cyI6IiIsImZpbHRlciI6IiIsImZpbHRlckdyb3VwIjoiIiwidGltZVN0YXJ0IjoiMjAyMi0wNy0yMSAxMDowMDowMCIsInRpbWVFbmQiOiIyMDIyLTA3LTIxIDEyOjAwOjAwIiwib3ZlcmxheXMiOnsiZGVza3RvcCI6eyJpZCI6ODUyNzd9LCJtb2JpbGUiOnsiaWQiOjg1Mjg3fSwidGFibGV0Ijp7ImlkIjo4NTMwM319fSx7InJ1bGVuYW1lIjoiU3VwZXJmYXN0IFx1MDBhMzI2IC0gMCBzZXQgdXAgZmVlcyAoR0hPU1QpIiwidXJscyI6eyJibGFja2xpc3QiOltdLCJ3aGl0ZWxpc3QiOltdfSwicmVmcyI6eyJibGFja2xpc3QiOltdLCJ3aGl0ZWxpc3QiOls0XX0sImxvY3MiOnsiYmxhY2tsaXN0IjpbXSwid2hpdGVsaXN0IjpbXX0sImR5bmFtaWNFbGVtZW50UnVsZXMiOnsiU2VsZWN0ZWRTdXBlcmZhc3RCcm9hZGJhbmQiOnsiaXMxIjoidHJ1ZSIsInZhbDEiOiIiLCJhbmRPciI6IiIsImlzMiI6Ij4iLCJ2YWwyIjoiIn0sIlNreUFiIjp7ImlzMSI6Ij09IiwidmFsMSI6ImNvbnRyb2wtdjMtMCIsImFuZE9yIjoiIiwiaXMyIjoiPiIsInZhbDIiOiIifX0sInZpc2l0b3JzIjoiYWxsIiwibm90aWZpY2F0aW9uc0FjY2VwdGVkIjoiYW55IiwiZGVsYXkiOiIiLCJwYWdlVmlld3MiOiIiLCJmaWx0ZXIiOiIiLCJmaWx0ZXJHcm91cCI6IiIsInRpbWVTdGFydCI6IjIwMjItMDctMjEgMTA6MDA6MDAiLCJ0aW1lRW5kIjoiMjAyMi0wNy0yMSAxMjowMDowMCIsIm92ZXJsYXlzIjp7ImRlc2t0b3AiOnsiaWQiOjg1MjMxfSwibW9iaWxlIjp7ImlkIjo4NTIzM30sInRhYmxldCI6eyJpZCI6ODUyMzJ9fX0seyJydWxlbmFtZSI6IlN1cGVyZmFzdCBcdTAwYTMyNSAtIDAgc2V0IHVwIGZlZXMiLCJ1cmxzIjp7ImJsYWNrbGlzdCI6W10sIndoaXRlbGlzdCI6W119LCJyZWZzIjp7ImJsYWNrbGlzdCI6W10sIndoaXRlbGlzdCI6WzRdfSwibG9jcyI6eyJibGFja2xpc3QiOltdLCJ3aGl0ZWxpc3QiOltdfSwiZHluYW1pY0VsZW1lbnRSdWxlcyI6eyJTZWxlY3RlZFN1cGVyZmFzdEJyb2FkYmFuZCI6eyJpczEiOiJ0cnVlIiwidmFsMSI6IiIsImFuZE9yIjoiIiwiaXMyIjoiPiIsInZhbDIiOiIifSwiU2t5QWIiOnsiaXMxIjoiPT0iLCJ2YWwxIjoidGVzdC12My0xIiwiYW5kT3IiOiIiLCJpczIiOiI+IiwidmFsMiI6IiJ9fSwidmlzaXRvcnMiOiJhbGwiLCJub3RpZmljYXRpb25zQWNjZXB0ZWQiOiJhbnkiLCJkZWxheSI6IiIsInBhZ2VWaWV3cyI6IiIsImZpbHRlciI6IiIsImZpbHRlckdyb3VwIjoiIiwidGltZVN0YXJ0IjoiMjAyMi0wNy0yMSAxMDowMDowMCIsInRpbWVFbmQiOiIyMDIyLTA3LTIxIDEyOjAwOjAwIiwib3ZlcmxheXMiOnsiZGVza3RvcCI6eyJpZCI6ODUyNzZ9LCJtb2JpbGUiOnsiaWQiOjg1MzA1fSwidGFibGV0Ijp7ImlkIjo4NTMwNH19fSx7InJ1bGVuYW1lIjoiU3VwZXJmYXN0IFx1MDBhMzI1IC0gMCBzZXQgdXAgZmVlcyAoR0hPU1QpIiwidXJscyI6eyJibGFja2xpc3QiOltdLCJ3aGl0ZWxpc3QiOltdfSwicmVmcyI6eyJibGFja2xpc3QiOltdLCJ3aGl0ZWxpc3QiOls0XX0sImxvY3MiOnsiYmxhY2tsaXN0IjpbXSwid2hpdGVsaXN0IjpbXX0sImR5bmFtaWNFbGVtZW50UnVsZXMiOnsiU2VsZWN0ZWRTdXBlcmZhc3RCcm9hZGJhbmQiOnsiaXMxIjoidHJ1ZSIsInZhbDEiOiIiLCJhbmRPciI6IiIsImlzMiI6Ij4iLCJ2YWwyIjoiIn0sIlNreUFiIjp7ImlzMSI6Ij09IiwidmFsMSI6ImNvbnRyb2wtdjMtMCIsImFuZE9yIjoiIiwiaXMyIjoiPiIsInZhbDIiOiIifX0sInZpc2l0b3JzIjoiYWxsIiwibm90aWZpY2F0aW9uc0FjY2VwdGVkIjoiYW55IiwiZGVsYXkiOiIiLCJwYWdlVmlld3MiOiIiLCJmaWx0ZXIiOiIiLCJmaWx0ZXJHcm91cCI6IiIsInRpbWVTdGFydCI6IjIwMjItMDctMjEgMTA6MDA6MDAiLCJ0aW1lRW5kIjoiMjAyMi0wNy0yMSAxMjowMDowMCIsIm92ZXJsYXlzIjp7ImRlc2t0b3AiOnsiaWQiOjg1MjM0fSwibW9iaWxlIjp7ImlkIjo4NTIzNX0sInRhYmxldCI6eyJpZCI6ODUyMzZ9fX0seyJydWxlbmFtZSI6IlN1cGVyZmFzdCBcdTAwYTMyNyAtIDAgc2V0IHVwIGZlZXMiLCJ1cmxzIjp7ImJsYWNrbGlzdCI6W10sIndoaXRlbGlzdCI6WyIxNzM1NjkiLCI1ODk3MCIsIjQ4OTc5NyIsIjEwNjE0MCIsIjEwODA1MzkiLCI2MjE0MzUiLCIxMDczMzM1IiwiOTUzNzQiLCI4MTk1ODMiLCI0NjY3NTciLCI3OTYxNjUiLCI4Njg4NiIsIjEwODQ1NzciLCI0NjYzNTMiLCI5MTIyNTMiLCIxMDIzNTYiLCI2OTYyMDUiLCIzMjk5OTEiLCI1OTkyNTEiLCIxNTcxNTAiLCI3MjMzMTUiLCI4NDEwMjciLCIxMDI2NjE4IiwiOTk5OTU5IiwiMTAyODY4MCIsIjI2ODAyMyIsIjgwMzM4IiwiOTc5NjM5IiwiMTAwMTk4NyIsIjUyOTAxOSIsIjkxMTYwMSIsIjk0MjU5NSIsIjI0MTA3MyIsIjU3MzU3NyIsIjgzMDQ1MSIsIjkxODI0MyIsIjkzNzU5MyIsIjMyMjYzNyIsIjkxNTIwNSIsIjkzMjc2OSIsIjg5MzkxMyIsIjkwNTczMyIsIjgxNTI0NSIsIjkxNTE5MyIsIjgxNDY4MyIsIjkyNzkxIiwiODgxNDAzIiwiODQ0MjI3IiwiNzU0MjIxIiwiMTkwMjQxIiwiNzIxNTMiLCI4MzU2NDMiLCI4MzU2NDEiLCIxNDM5NDUiLCI1Nzg5NTEiLCIyNzA0ODUiLCI4MDE5NTEiLCI3OTEzNDMiLCI3NDA1MDkiLCIyNTYxMzMiLCI2MTM3MDEiLCI4MTI3MDciLCI4MDU0NjkiLCI3NjYzMTUiLCI2NjE2MyIsIjMwMTcwMSIsIjEyNDU5OCIsIjc5MTA0MyIsIjc3NjEzMSIsIjc1OTk4MSIsIjM1MDM0IiwiNjMxMzYiLCIyMjEyODMiLCI2NzUwNjciLCI3NzQ3MTMiLCIyMTE1MDkiLCI3Nzc4NDUiLCIzNjUxMzUiLCI3Mzk3OTkiLCI3ODA2NzUiLCI2NTI0MTciLCI0NDk1NSIsIjU2NjcwNSIsIjU0NTQ4NyIsIjcyMzU0IiwiNjM3MjczIiwiNDgzMzE3IiwiNjMzMjA0IiwiNTc2MTgzIiwiNzM2NTE5IiwiNjY1NzYxIiwiNTgyNDgiLCIxNzAzNjMiLCI0MTA1OTciLCI4ODA5OSIsIjcyNjk0NyIsIjExNTM3OCIsIjYxNDgzNSIsIjU2NDEyOSIsIjYzNTM2MiIsIjU1ODEwIiwiNjUzMTMxIiwiNzIyNjg3IiwiNzAxNDgzIiwiNzA5MTc3IiwiMTg1NDI3IiwiNzE1NzAxIiwiNjI0ODcxIiwiNzEwMzYxIiwiNjk3MDUzIiwiNjk2OTU5IiwiNjc2MDA3IiwiMzE3ODI1IiwiMjg5NTI5IiwiNjE4MTcxIiwiNTI1NTI1IiwiNjU0ODAxIiwiNjc4OTQ1IiwiMTE5MTU4IiwiNjc2ODkiLCI2NDM5NTkiLCI1MjMyNTUiLCIzMjg1MTMiLCI2NDk5NzkiLCI2MzYwNDkiLCI2Nzk4MTkiLCI2NzQyNzEiLCIxMzgyNjkiLCI1NjgyMjMiLCIxNTUyODAiLCI4MjMxMSIsIjU2NTE5MSIsIjYyODM5OSIsIjY3NzQ5MyIsIjY3NzY3NyIsIjE5NTQ4MyIsIjMwMjM5NSIsIjY2Njk5NSIsIjY0NzAxNyIsIjY1NDM4NSIsIjY2ODIxOSIsIjI3NzY3MyIsIjU5MzkzOSIsIjc2NDMxIiwiMjM2MTUzIiwiMTM0MzAiLCIxODg5ODEiLCIxMDg3NDIiLCI2MzI4MDgiLCI2MTAwNjkiLCI1NDA4NjUiLCIyNDM1MTUiLCI0OTY5NCIsIjY3MDE1IiwiNjA1MzExIiwiMzI5NzQ1IiwiODQxMTkiLCI2MDYzODMiLCI1Njg0MDUiLCI2MDUzMjkiLCI2MTMxNTUiLCI1ODA4NDciLCI1OTczNzkiLCIyMzAxNTEiLCI0NTA4MDMiLCI2MDYxMiIsIjMyMDQyMyIsIjU3MzQyMSIsIjI3MDQxMyIsIjU2NTQ4MyIsIjI4MTAwNyIsIjMxMTExMyIsIjU0MjYyMSIsIjI0NDY2NSIsIjMxNTQ4MyIsIjUyNjQzMSIsIjI0ODc0MSIsIjExMzY1NyIsIjI4ODIwOSIsIjUzMTk3OSIsIjMxMTkyNSIsIjI1NTQzNyIsIjEzNTM5IiwiMTQyNjg4IiwiMjA2NDYxIiwiMjc0MTgxIiwiMjkzMDcxIiwiNDkyMzc4IiwiNTEwMDMzIiwiNTA5MzY1IiwiMTYzNzI2IiwiMjQ1MTA1IiwiNDM4NDQ1IiwiNDk5MDExIiwiNDg5NDQ3IiwiMTc3Mzg5IiwiNDk5NzM1IiwiMjI2OTMxIiwiOTUwNDkiLCI0OTE3MzciLCI0MjIzMzEiLCIzMTQyMjciLCIyMjIwMjUiLCIxMTY3MjIiLCI0NzM5OTQiLCI0ODM0OTEiLCI0ODQzMzMiLCIzMDM3MiIsIjI0MDM2NSIsIjI0MDM2MyIsIjEzNTM2MyIsIjczODQ2IiwiMzI2NjU3IiwiMjU0NDI5IiwiMTA2ODA3IiwiMTk4Mzg3IiwiMjY1Mjg5IiwiMzA3NzA1IiwiMzA2MTM3IiwiMjI0MzI3IiwiMzIxNzcxIiwiMzEzNjA1IiwiMjgwMDY5IiwiNzUxNTAiLCIzMTc5NDUiLCIxODMyOTEiLCIyMzI1NTEiLCIyMzM4NTkiLCI4MzExOSIsIjMzMDkwIiwiNDEzMTI1IiwiNTM3MjYiLCI1ODcyOCIsIjE4MTUxNyIsIjI2NTYzNSIsIjIxMzYzNSIsIjIyNjIxMSIsIjczMzMxIiwiMTM5Mjc1IiwiMjA2MTI5IiwiMTg0OTA5IiwiMjA0NzEiLCIyNzE0NTMiLCIxNDM0NjYiLCI1ODk5NCIsIjY4NzI3IiwiMTg5MDY5IiwiMTY1NTkiLCI5NDgzOCIsIjI3MTQ0NSIsIjg1Mzg2IiwiMTg0MzQ1IiwiNzY0NDUiLCI2ODQzNyIsIjY1OTcwIiwiMzE0MTU1IiwiMzAxNzUzIiwiNjkzNjIiLCIxNjIzOTIiLCIxODEwMTMiLCI3ODg4OCIsIjk1NzUwIiwiMTYyNjIwIiwiMTk1MTcxIiwiNDc4NjgiLCIyMDQxOTEiLCIxMTMzNDkiLCI4NDQ1MyIsIjEwNjMxMiIsIjYwOTQwIiwiMTIyOTY1IiwiMTQxNjA2IiwiODkyNDgiLCI3MzU4NSIsIjExMDQ4MyIsIjExMDYwOSIsIjI4Mjk0OSIsIjEwMzUwNCIsIjEwMzM4MSIsIjIwMTMwOSIsIjI2OTk3OSIsIjI0OTM3MSIsIjE1NDc1MCIsIjcxNzU5IiwiNjU1NDAiLCI3OTYyOSIsIjI3MTk2NSIsIjY3NTQ2IiwiMjA0OTA5IiwiMTI5OTk2IiwiNjM4NjIiLCIyNzY4NCIsIjc4MzI3IiwiOTU4ODgiLCIxNTcxMTgiLCIxNDI0ODciLCIxMzM4MDUiLCIxMTEiLCI0NTYyOCJdfSwicmVmcyI6eyJibGFja2xpc3QiOltdLCJ3aGl0ZWxpc3QiOls0XX0sImxvY3MiOnsiYmxhY2tsaXN0IjpbXSwid2hpdGVsaXN0IjpbXX0sImR5bmFtaWNFbGVtZW50UnVsZXMiOnsiU2VsZWN0ZWRTdXBlcmZhc3RCcm9hZGJhbmQiOnsiaXMxIjoidHJ1ZSIsInZhbDEiOiIiLCJhbmRPciI6IiIsImlzMiI6Ij4iLCJ2YWwyIjoiIn0sIlNreUFiIjp7ImlzMSI6Ij09IiwidmFsMSI6InRlc3QtdjMtMSIsImFuZE9yIjoiIiwiaXMyIjoiPiIsInZhbDIiOiIifX0sInZpc2l0b3JzIjoiYWxsIiwibm90aWZpY2F0aW9uc0FjY2VwdGVkIjoiYW55IiwiZGVsYXkiOiIiLCJwYWdlVmlld3MiOiIiLCJmaWx0ZXIiOiIiLCJmaWx0ZXJHcm91cCI6IiIsInRpbWVTdGFydCI6IjIwMjItMDctMjEgMTA6MDA6MDAiLCJ0aW1lRW5kIjoiMjAyMi0wNy0yMSAxMjowMDowMCIsIm92ZXJsYXlzIjp7ImRlc2t0b3AiOnsiaWQiOjg1NjM5fSwibW9iaWxlIjp7ImlkIjo4NTY0MH0sInRhYmxldCI6eyJpZCI6ODU2NDF9fX0seyJydWxlbmFtZSI6IlN1cGVyZmFzdCBcdTAwYTMyNyAtIDAgc2V0IHVwIGZlZXMgKEdIT1NUKSIsInVybHMiOnsiYmxhY2tsaXN0IjpbXSwid2hpdGVsaXN0IjpbIjE3MzU2OSIsIjU4OTcwIiwiNDg5Nzk3IiwiMTA2MTQwIiwiMTA4MDUzOSIsIjYyMTQzNSIsIjEwNzMzMzUiLCI5NTM3NCIsIjgxOTU4MyIsIjQ2Njc1NyIsIjc5NjE2NSIsIjg2ODg2IiwiMTA4NDU3NyIsIjQ2NjM1MyIsIjkxMjI1MyIsIjEwMjM1NiIsIjY5NjIwNSIsIjMyOTk5MSIsIjU5OTI1MSIsIjE1NzE1MCIsIjcyMzMxNSIsIjg0MTAyNyIsIjEwMjY2MTgiLCI5OTk5NTkiLCIxMDI4NjgwIiwiMjY4MDIzIiwiODAzMzgiLCI5Nzk2MzkiLCIxMDAxOTg3IiwiNTI5MDE5IiwiOTExNjAxIiwiOTQyNTk1IiwiMjQxMDczIiwiNTczNTc3IiwiODMwNDUxIiwiOTE4MjQzIiwiOTM3NTkzIiwiMzIyNjM3IiwiOTE1MjA1IiwiOTMyNzY5IiwiODkzOTEzIiwiOTA1NzMzIiwiODE1MjQ1IiwiOTE1MTkzIiwiODE0NjgzIiwiOTI3OTEiLCI4ODE0MDMiLCI4NDQyMjciLCI3NTQyMjEiLCIxOTAyNDEiLCI3MjE1MyIsIjgzNTY0MyIsIjgzNTY0MSIsIjE0Mzk0NSIsIjU3ODk1MSIsIjI3MDQ4NSIsIjgwMTk1MSIsIjc5MTM0MyIsIjc0MDUwOSIsIjI1NjEzMyIsIjYxMzcwMSIsIjgxMjcwNyIsIjgwNTQ2OSIsIjc2NjMxNSIsIjY2MTYzIiwiMzAxNzAxIiwiMTI0NTk4IiwiNzkxMDQzIiwiNzc2MTMxIiwiNzU5OTgxIiwiMzUwMzQiLCI2MzEzNiIsIjIyMTI4MyIsIjY3NTA2NyIsIjc3NDcxMyIsIjIxMTUwOSIsIjc3Nzg0NSIsIjM2NTEzNSIsIjczOTc5OSIsIjc4MDY3NSIsIjY1MjQxNyIsIjQ0OTU1IiwiNTY2NzA1IiwiNTQ1NDg3IiwiNzIzNTQiLCI2MzcyNzMiLCI0ODMzMTciLCI2MzMyMDQiLCI1NzYxODMiLCI3MzY1MTkiLCI2NjU3NjEiLCI1ODI0OCIsIjE3MDM2MyIsIjQxMDU5NyIsIjg4MDk5IiwiNzI2OTQ3IiwiMTE1Mzc4IiwiNjE0ODM1IiwiNTY0MTI5IiwiNjM1MzYyIiwiNTU4MTAiLCI2NTMxMzEiLCI3MjI2ODciLCI3MDE0ODMiLCI3MDkxNzciLCIxODU0MjciLCI3MTU3MDEiLCI2MjQ4NzEiLCI3MTAzNjEiLCI2OTcwNTMiLCI2OTY5NTkiLCI2NzYwMDciLCIzMTc4MjUiLCIyODk1MjkiLCI2MTgxNzEiLCI1MjU1MjUiLCI2NTQ4MDEiLCI2Nzg5NDUiLCIxMTkxNTgiLCI2NzY4OSIsIjY0Mzk1OSIsIjUyMzI1NSIsIjMyODUxMyIsIjY0OTk3OSIsIjYzNjA0OSIsIjY3OTgxOSIsIjY3NDI3MSIsIjEzODI2OSIsIjU2ODIyMyIsIjE1NTI4MCIsIjgyMzExIiwiNTY1MTkxIiwiNjI4Mzk5IiwiNjc3NDkzIiwiNjc3Njc3IiwiMTk1NDgzIiwiMzAyMzk1IiwiNjY2OTk1IiwiNjQ3MDE3IiwiNjU0Mzg1IiwiNjY4MjE5IiwiMjc3NjczIiwiNTkzOTM5IiwiNzY0MzEiLCIyMzYxNTMiLCIxMzQzMCIsIjE4ODk4MSIsIjEwODc0MiIsIjYzMjgwOCIsIjYxMDA2OSIsIjU0MDg2NSIsIjI0MzUxNSIsIjQ5Njk0IiwiNjcwMTUiLCI2MDUzMTEiLCIzMjk3NDUiLCI4NDExOSIsIjYwNjM4MyIsIjU2ODQwNSIsIjYwNTMyOSIsIjYxMzE1NSIsIjU4MDg0NyIsIjU5NzM3OSIsIjIzMDE1MSIsIjQ1MDgwMyIsIjYwNjEyIiwiMzIwNDIzIiwiNTczNDIxIiwiMjcwNDEzIiwiNTY1NDgzIiwiMjgxMDA3IiwiMzExMTEzIiwiNTQyNjIxIiwiMjQ0NjY1IiwiMzE1NDgzIiwiNTI2NDMxIiwiMjQ4NzQxIiwiMTEzNjU3IiwiMjg4MjA5IiwiNTMxOTc5IiwiMzExOTI1IiwiMjU1NDM3IiwiMTM1MzkiLCIxNDI2ODgiLCIyMDY0NjEiLCIyNzQxODEiLCIyOTMwNzEiLCI0OTIzNzgiLCI1MTAwMzMiLCI1MDkzNjUiLCIxNjM3MjYiLCIyNDUxMDUiLCI0Mzg0NDUiLCI0OTkwMTEiLCI0ODk0NDciLCIxNzczODkiLCI0OTk3MzUiLCIyMjY5MzEiLCI5NTA0OSIsIjQ5MTczNyIsIjQyMjMzMSIsIjMxNDIyNyIsIjIyMjAyNSIsIjExNjcyMiIsIjQ3Mzk5NCIsIjQ4MzQ5MSIsIjQ4NDMzMyIsIjMwMzcyIiwiMjQwMzY1IiwiMjQwMzYzIiwiMTM1MzYzIiwiNzM4NDYiLCIzMjY2NTciLCIyNTQ0MjkiLCIxMDY4MDciLCIxOTgzODciLCIyNjUyODkiLCIzMDc3MDUiLCIzMDYxMzciLCIyMjQzMjciLCIzMjE3NzEiLCIzMTM2MDUiLCIyODAwNjkiLCI3NTE1MCIsIjMxNzk0NSIsIjE4MzI5MSIsIjIzMjU1MSIsIjIzMzg1OSIsIjgzMTE5IiwiMzMwOTAiLCI0MTMxMjUiLCI1MzcyNiIsIjU4NzI4IiwiMTgxNTE3IiwiMjY1NjM1IiwiMjEzNjM1IiwiMjI2MjExIiwiNzMzMzEiLCIxMzkyNzUiLCIyMDYxMjkiLCIxODQ5MDkiLCIyMDQ3MSIsIjI3MTQ1MyIsIjE0MzQ2NiIsIjU4OTk0IiwiNjg3MjciLCIxODkwNjkiLCIxNjU1OSIsIjk0ODM4IiwiMjcxNDQ1IiwiODUzODYiLCIxODQzNDUiLCI3NjQ0NSIsIjY4NDM3IiwiNjU5NzAiLCIzMTQxNTUiLCIzMDE3NTMiLCI2OTM2MiIsIjE2MjM5MiIsIjE4MTAxMyIsIjc4ODg4IiwiOTU3NTAiLCIxNjI2MjAiLCIxOTUxNzEiLCI0Nzg2OCIsIjIwNDE5MSIsIjExMzM0OSIsIjg0NDUzIiwiMTA2MzEyIiwiNjA5NDAiLCIxMjI5NjUiLCIxNDE2MDYiLCI4OTI0OCIsIjczNTg1IiwiMTEwNDgzIiwiMTEwNjA5IiwiMjgyOTQ5IiwiMTAzNTA0IiwiMTAzMzgxIiwiMjAxMzA5IiwiMjY5OTc5IiwiMjQ5MzcxIiwiMTU0NzUwIiwiNzE3NTkiLCI2NTU0MCIsIjc5NjI5IiwiMjcxOTY1IiwiNjc1NDYiLCIyMDQ5MDkiLCIxMjk5OTYiLCI2Mzg2MiIsIjI3Njg0IiwiNzgzMjciLCI5NTg4OCIsIjE1NzExOCIsIjE0MjQ4NyIsIjEzMzgwNSIsIjExMSIsIjQ1NjI4Il19LCJyZWZzIjp7ImJsYWNrbGlzdCI6W10sIndoaXRlbGlzdCI6WzRdfSwibG9jcyI6eyJibGFja2xpc3QiOltdLCJ3aGl0ZWxpc3QiOltdfSwiZHluYW1pY0VsZW1lbnRSdWxlcyI6eyJTZWxlY3RlZFN1cGVyZmFzdEJyb2FkYmFuZCI6eyJpczEiOiJ0cnVlIiwidmFsMSI6IiIsImFuZE9yIjoiIiwiaXMyIjoiPiIsInZhbDIiOiIifSwiU2t5QWIiOnsiaXMxIjoiPT0iLCJ2YWwxIjoiY29udHJvbC12My0wIiwiYW5kT3IiOiIiLCJpczIiOiI+IiwidmFsMiI6IiJ9fSwidmlzaXRvcnMiOiJhbGwiLCJub3RpZmljYXRpb25zQWNjZXB0ZWQiOiJhbnkiLCJkZWxheSI6IiIsInBhZ2VWaWV3cyI6IiIsImZpbHRlciI6IiIsImZpbHRlckdyb3VwIjoiIiwidGltZVN0YXJ0IjoiMjAyMi0wNy0yMSAxMDowMDowMCIsInRpbWVFbmQiOiIyMDIyLTA3LTIxIDEyOjAwOjAwIiwib3ZlcmxheXMiOnsiZGVza3RvcCI6eyJpZCI6ODU2MzZ9LCJtb2JpbGUiOnsiaWQiOjg1NjM3fSwidGFibGV0Ijp7ImlkIjo4NTYzOH19fSx7InJ1bGVuYW1lIjoiU3VwZXJmYXN0IERpcmVjdCBQcmljaW5nIC0gMCBzZXQgdXAgZmVlcyIsInVybHMiOnsiYmxhY2tsaXN0IjpbXSwid2hpdGVsaXN0IjpbIjQ2NDA3IiwiNjk2MDUiLCI1MzMzNTciLCI0NTgzOTUiLCI1MDc1NDciLCI2NTIyOSIsIjU3NDM0IiwiMzE1MTEzIl19LCJyZWZzIjp7ImJsYWNrbGlzdCI6W10sIndoaXRlbGlzdCI6W119LCJsb2NzIjp7ImJsYWNrbGlzdCI6W10sIndoaXRlbGlzdCI6W119LCJkeW5hbWljRWxlbWVudFJ1bGVzIjp7IlNlbGVjdGVkU3VwZXJmYXN0QnJvYWRiYW5kIjp7ImlzMSI6InRydWUiLCJ2YWwxIjoiIiwiYW5kT3IiOiIiLCJpczIiOiI+IiwidmFsMiI6IiJ9LCJTa3lBYiI6eyJpczEiOiI9PSIsInZhbDEiOiJ0ZXN0LXYzLTEiLCJhbmRPciI6IiIsImlzMiI6Ij4iLCJ2YWwyIjoiIn19LCJ2aXNpdG9ycyI6ImFsbCIsIm5vdGlmaWNhdGlvbnNBY2NlcHRlZCI6ImFueSIsImRlbGF5IjoiIiwicGFnZVZpZXdzIjoiIiwiZmlsdGVyIjoiIiwiZmlsdGVyR3JvdXAiOiIiLCJ0aW1lU3RhcnQiOiIyMDIzLTA2LTI4IDIzOjU5OjU5IiwidGltZUVuZCI6IjIwMjItMDgtMTggMjM6NTk6NTkiLCJvdmVybGF5cyI6eyJkZXNrdG9wIjp7ImlkIjo4NDc0Nn0sIm1vYmlsZSI6eyJpZCI6ODQ3NDh9LCJ0YWJsZXQiOnsiaWQiOjg0NzQ3fX19LHsicnVsZW5hbWUiOiJTdXBlcmZhc3QgRGlyZWN0IFByaWNpbmcgLSAwIHNldCB1cCBmZWVzIChHSE9TVCkiLCJ1cmxzIjp7ImJsYWNrbGlzdCI6W10sIndoaXRlbGlzdCI6WyI0NjQwNyIsIjY5NjA1IiwiNTMzMzU3IiwiNDU4Mzk1IiwiNTA3NTQ3IiwiNjUyMjkiLCI1NzQzNCIsIjMxNTExMyJdfSwicmVmcyI6eyJibGFja2xpc3QiOltdLCJ3aGl0ZWxpc3QiOltdfSwibG9jcyI6eyJibGFja2xpc3QiOltdLCJ3aGl0ZWxpc3QiOltdfSwiZHluYW1pY0VsZW1lbnRSdWxlcyI6eyJTZWxlY3RlZFN1cGVyZmFzdEJyb2FkYmFuZCI6eyJpczEiOiJ0cnVlIiwidmFsMSI6IiIsImFuZE9yIjoiIiwiaXMyIjoiPiIsInZhbDIiOiIifSwiU2t5QWIiOnsiaXMxIjoiPT0iLCJ2YWwxIjoiY29udHJvbC12My0wIiwiYW5kT3IiOiIiLCJpczIiOiI+IiwidmFsMiI6IiJ9fSwidmlzaXRvcnMiOiJhbGwiLCJub3RpZmljYXRpb25zQWNjZXB0ZWQiOiJhbnkiLCJkZWxheSI6IiIsInBhZ2VWaWV3cyI6IiIsImZpbHRlciI6IiIsImZpbHRlckdyb3VwIjoiIiwidGltZVN0YXJ0IjoiMjAyMy0wNi0yOCAyMzo1OTo1OSIsInRpbWVFbmQiOiIyMDIyLTA4LTE4IDIzOjU5OjU5Iiwib3ZlcmxheXMiOnsiZGVza3RvcCI6eyJpZCI6ODUyMzd9LCJtb2JpbGUiOnsiaWQiOjg1MjM4fSwidGFibGV0Ijp7ImlkIjo4NTIzOX19fSx7InJ1bGVuYW1lIjoiQ291bnRkb3duIHJ1bGUiLCJ1cmxzIjp7ImJsYWNrbGlzdCI6W10sIndoaXRlbGlzdCI6WyIjc21jb25seSJdfSwicmVmcyI6eyJibGFja2xpc3QiOltdLCJ3aGl0ZWxpc3QiOltdfSwibG9jcyI6eyJibGFja2xpc3QiOltdLCJ3aGl0ZWxpc3QiOltdfSwiZHluQmFza2V0TWluUXR5IjoiIiwidmlzaXRvcnMiOiJhbGwiLCJub3RpZmljYXRpb25zQWNjZXB0ZWQiOiJhbnkiLCJkZWxheSI6IiIsInBhZ2VWaWV3cyI6IiIsImZpbHRlciI6IiIsImZpbHRlckdyb3VwIjoiIiwidGltZVN0YXJ0IjoiIiwidGltZUVuZCI6IiIsIm92ZXJsYXlzIjp7ImRlc2t0b3AiOnsiaWQiOjg5MDMyfSwibW9iaWxlIjp7ImlkIjoiIn0sInRhYmxldCI6eyJpZCI6IiJ9fX1dLCJwbHVnaW5zIjp7InRyYWNraW5nIjp7IkFCb24iOjAsInR5cGUiOiIxIiwiY29uZmlybVBhZ2UiOiJDb25maXJtYXRpb25QYWdlIiwib3JkZXJWYWx1ZSI6Imlnbm9yZSIsIm9yZGVySUQiOiJPcmRlcklkIiwiY3VycmVuY3kiOiIiLCJvcmRlckNvdW50IjoiIiwicHgxIjoiaHR0cHM6XC9cL3Ricy50cmFkZWRvdWJsZXIuY29tXC9yZXBvcnQ/b3JnYW5pemF0aW9uPTIzMTM4OTYmZXZlbnQ9NDIxNzI0Jm9yZGVyTnVtYmVyPXtPcmRlcklkfSZvcmRlclZhbHVlPTEmY3VycmVuY3k9R0JQJmYyPXtCYXNrZXRJdGVtfSZ0eXBlPWlmcmFtZSIsInB4MUxvYWQiOiJpbWciLCJlaCI6MH19LCJ1c2VMb2MiOjAsImN1c3RvbUNvZGUiOm51bGwsIm92ZXJsYXlzQ0MiOm51bGwsImlwIjoiOTAuMjE2LjE1MC4xOTgiLCJpcGIiOmZhbHNlLCJkZXZpY2UiOmZhbHNlLCJzb3VyY2VzIjpmYWxzZSwidCI6MC4wMDA5ODYsImxvY1NpZyI6IjRlZjQ3YjJlMmQzY2VmODkzMWVmNjcwOGIwYzUyMzY5In0=',};(function(w, d) {var src_co_io = 'auto';
+	if(src_co_io === 'co' || src_co_io === 'io') {
+		var tld = src_co_io;
+		sessionStorage.setItem('smc_cdn_source', tld);
+	} else {
+		var tld  = sessionStorage.getItem('smc_cdn_source');
+	}
+	var cspCheck = function(cb) {
+		if (tld !== null) {
+			cb();
+		} else {
+			tld = 'io';
+			var ioTest = new XMLHttpRequest();
+			ioTest.open('HEAD', 'https://js.smct.' + tld + '/csp/csp.js', true);
+			ioTest.send();
+			ioTest.onerror = function() {
+				tld = 'co'
+				var coTest = new XMLHttpRequest();
+				coTest.open('HEAD', 'https://js.smct.' + tld + '/csp/csp.js', true);
+				coTest.send();
+				coTest.onerror = function() {
+					tld = 'co';
+					cb();
+				}
+				coTest.onload = function() {
+					tld = 'co';
+					sessionStorage.setItem('smc_cdn_source', tld);
+					cb();
+				}
+			}
+			ioTest.onload = function() {
+				tld = 'io';
+				sessionStorage.setItem('smc_cdn_source', tld);
+				cb();
+			}
+		}
+	}
+		var addJS = function(url, callback) {
+				if(url.indexOf('://l.smct') === -1 && url.indexOf('://dev.smct') === -1 && tld !== undefined) {
+			url = url.replace(/smct.(c|i)o/i, 'smct.' + tld);
+		}
+				var h = d.getElementsByTagName("head")[0],
+			j = d.createElement('script');
+		j.type = 'text/javascript';
+		j.src = url;
+		j.charset = 'utf-8';
+		h.appendChild(j);
+		j.onload = function() {
+			if (callback) {
+				callback();
+			}
+		};
+	}
+	try{
+		cspCheck(function(){ 			addJS(window.$smctResources.getURL('tag_url'), function() {
+				window.$smcCallCustomScripts = function(){$smcT5.CustomScripts = {};try{/**
+ * D.P - 23/02/2022 - Trigger third party analytics code for Sky.
+ **/
+$smcT5.CustomScripts.TriggerThirdPartyAnalytics = function(type = 'default') {
+    if(!type || type === 'default') {
+        return false;
+    }
+    // Optimizely
+    window['optimizely'] = window['optimizely'] || [];
+    window['optimizely'].push({
+      type: "event",
+      eventName: (type === 'control' ? 'intentlyControl' : 'intentlyTest'),
+      tags: {}
+    });
+    
+    // Adobe Analytics
+    if(window.skyTags) {
+        window.skyTags.queue.push(['set', { page: { custom: { variant: (type === 'control' ? 'intentlyShownControl' : 'intentlyShownTest') } } }]);
+        window.skyTags.queue.push(['event', { type: 'click' }], ['track']);
+    }
+}
+
+/**
+ * D.P - 22/02/2022 - Adding SkyAB DK to return the AB result that Sky setup, current values are 'control-0' and 'test-1'
+ **/
+$smcT5.CustomScripts.SkyAB = function() {
+    if(window && window.intently && window.intently.exp) {
+        return window.intently.exp;
+    } else {
+        return false;
+    }
+}
+
+$smcT5.CustomScripts.OrderId = function() {
+    if(window && window.dtm && window.dtm.orderId) {
+        return window.dtm.orderId;
+    } else {
+        return false;
+    }
+}
+
+$smcT5.CustomScripts.TagCode = function() {
+    (function getAffiliatePrice() {
+        $smcT5.CustomScripts.CollectAffiliatePrice();
+    })();
+    
+    (function GetPackageInfo(){
+        setInterval(function(){
+            var packages = document.querySelectorAll('[data-test-id="broadband-products-page-section"] [role="tablist"] button');
+            var packageArr = [];
+            if (packages && packages.length > 0){
+                for (i = 0; i < packages.length; i++){
+                    var pkg = packages[i];
+                    var classes = pkg.classList.value;
+                    var currentlySelected = false;
+                    if (classes.indexOf('active') > -1){
+                        currentlySelected = true;
+                    }
+                    packageArr.push({
+                        name : pkg.getAttribute('aria-label'),
+                        index : i,
+                        currentlySelected : currentlySelected,
+                        packagePrice : pkg.querySelector('.c-price__main').innerText
+                    });
+                }
+        
+                localStorage.setItem('smc_available_packages', JSON.stringify(packageArr));
+            }
+        }, 1000);
+    })();
+    
+    (function BasketScanner(){
+        var getATC = setInterval(function(){   
+            var pricePlanCookie = $smcT5.CookieManager.read('smc_affi_plan');
+            var title = document.querySelector('.c-broadband-product-tabs .tab-headers button.tab-header--active .product-tab__header-heading');
+            var price = document.querySelector('.c-broadband-product-tabs .tab-headers button.tab-header--active .c-price');
+            var duration = document.querySelector('.c-broadband-product-tabs .tab-headers button.tab-header--active .product-tab__header-duration');
+            if (title && price && duration && pricePlanCookie){
+                var parsed = JSON.parse(decodeURIComponent(atob(pricePlanCookie)));
+                var obj = {};
+                for(var i = 0; i < parsed.length; i++) {
+                    if(parsed[i].name.trim() === title.textContent.trim()) {
+                        obj.priceSky = parsed[i].skyPrice;
+                        obj.affiSetup = parsed[i].affiSetup;
+                        obj.skySetup = parsed[i].skySetup;
+                        break;
+                    }
+                }
+                obj.title = title.textContent;
+                obj.duration = duration.textContent;
+                obj.priceAffi = price.textContent;
+                
+                var itemEncoded = btoa(encodeURIComponent(JSON.stringify(obj)));
+                $smcT5.CookieManager.create('smc_dyn_item', itemEncoded, 0);
+                
+            } else if (title && price && duration) {
+                var objNew = {};
+                objNew.title = title.textContent;
+                objNew.priceSky = price.textContent;
+                objNew.priceAffi = price.textContent;
+                objNew.duration = duration.textContent;
+                objNew.affiSetup = '£0';
+                objNew.skySetup = '£19.95';
+                
+                var itemEncodedNew = btoa(encodeURIComponent(JSON.stringify(objNew)));
+                $smcT5.CookieManager.create('smc_dyn_item', itemEncodedNew, 0);
+            }     
+                 
+        }, 700);
+    })();
+};
+
+$smcT5.CustomScripts.BroadbandCurrentlySelected = function(){
+    var lsitem = localStorage.getItem('smc_available_packages');
+    if (!lsitem){
+        return false;
+    } else if (location.href.indexOf('/choose/add-broadband/') === -1){
+        return false;
+    }
+    var obj = JSON.parse(lsitem);
+    var currentlySelected = false;
+    obj.forEach(function(item){
+        if(item.currentlySelected === true){
+            currentlySelected = item.name;
+        }
+    });
+    return currentlySelected;
+}
+
+$smcT5.CustomScripts.BroadbandFastestAvailable = function(){
+    var lsitem = localStorage.getItem('smc_available_packages');
+    if (!lsitem){
+        return false;
+    } else if (location.href.indexOf('/choose/add-broadband/') === -1){
+        return false;
+    }
+    var obj = JSON.parse(lsitem);
+    return obj[obj.length -1].name;
+}
+
+$smcT5.CustomScripts.BroadbandRuleSwitcher = function(){
+    var fastestAvailable = $smcT5.CustomScripts.BroadbandFastestAvailable();
+    var currentlySelected = $smcT5.CustomScripts.BroadbandCurrentlySelected();
+    if (!fastestAvailable || !currentlySelected){
+        return false;
+    }
+    if (currentlySelected === 'Essential Plus' && fastestAvailable === 'Superfast') {
+        return 1;
+    } else if (currentlySelected === 'Superfast 35' && fastestAvailable === 'Superfast') {
+        return 1;
+    } else if (currentlySelected === 'Superfast 35' && fastestAvailable === 'Ultrafast Plus') {
+        return 2;
+    } else if (currentlySelected === 'Superfast' && fastestAvailable === 'Ultrafast Plus') {
+        return 3;
+    } else if (currentlySelected === 'Ultrafast' && fastestAvailable === 'Ultrafast Plus') {
+        return 4;
+    } else if (currentlySelected === 'Ultrafast Plus' && fastestAvailable === 'Ultrafast Plus') {
+        return 5;
+    } else {
+        return false;
+    }
+};
+
+$smcT5.CustomScripts.SelectedSuperfastBroadband = function(){
+    var selectedTab = document.querySelector('div[data-test-id="bbt-broadband-section"] button[aria-selected="true"]');
+    if(selectedTab) {
+        var title = selectedTab.getAttribute('aria-label').toLowerCase();
+        if(title.indexOf('superfast') > -1) {
+            $smcT5.CookieManager.create('smc_sele_supfast', true, 0);
+        } else {
+            $smcT5.CookieManager.del('smc_sele_supfast');
+        }
+    }
+    var cookie = $smcT5.CookieManager.read('smc_sele_supfast');
+    return cookie ? cookie : false;
+};
+
+// K.S - Find price from the array of object if user is from qualified affiliate
+$smcT5.CustomScripts.CollectAffiliatePrice = function(){
+    var pricePlan = [
+        // Affiliate FBBDCAFFE
+        {        
+            affId:['1080539','621435','1073335','95374','819583','466757','796165','86886','1084577','466353','912253','102356','696205','329991','599251','157150','723315','841027','1026618','999959','1028680','268023','80338',
+            '979639','1001987','529019','911601','942595','241073','573577','830451','918243','937593','322637','915205','932769','893913','905733','815245','915193','814683','92791','881403','844227','754221','190241',
+            '72153','835643','835641','143945','578951','270485','801951','791343','740509','256133','613701','812707','805469','766315','66163','301701','124598','791043','776131','759981','35034','63136','221283','675067',
+            '774713','211509','777845','365135','739799','780675','652417','44955','566705','545487','72354','637273','483317','633204','576183','736519','665761','58248','170363','410597','88099','726947','115378','614835',
+            '564129','635362','55810','653131','722687','701483','709177','185427','715701','624871','710361','697053','696959','676007','317825','289529','618171','525525','654801','678945','119158','67689','643959','523255',
+            '328513','649979','636049','679819','674271','138269','568223','155280','82311','565191','628399','677493','677677','195483','302395','666995','647017','654385','668219','277673','593939','76431','236153','13430',
+            '188981','108742','632808','610069','540865','243515','49694','67015','605311','329745','84119','606383','568405','605329','613155','580847','597379','230151','450803','60612','320423','573421','270413','565483',
+            '281007','311113','542621','244665','315483','526431','248741','113657','288209','531979','311925','255437','13539','142688','206461','274181','293071','492378','510033','509365','163726','245105','489797','438445',
+            '499011','489447','177389','499735','226931','95049','491737','422331','314227','222025','116722','473994','483491','484333','30372','240365','240363','135363','73846','326657','254429','106807','198387','265289',
+            '307705','306137','224327','321771','313605','280069','75150','317945','183291','232551','233859','83119','33090','413125','53726','58728','181517','265635','213635','226211','73331','139275','206129','184909',
+            '20471','271453','143466','58994','68727','189069','16559','94838','271445','85386','184345','76445','68437','65970','314155','301753','69362','162392','181013','78888','95750','162620','195171','47868','204191',
+            '113349','84453','106312','60940','122965','141606','89248','73585','110483','110609','282949','103504','103381','201309','269979','249371','154750','71759','65540','79629','271965','67546','204909','129996',
+            '63862','27684','78327','95888','157118','142487','133805','111','45628'],
+            plan:[
+                { name: 'Superfast', skyPrice: '£28.50', affiPrice: '£28.50', skySetup: '£19.95', affiSetup: '£9.95' }
+                // { name: 'Superfast 35', skyPrice: '£28', affiPrice: '£28', skySetup: '£19.95', affiSetup: '£9.95' },
+                // { name: 'Ultrafast', skyPrice: '£35', affiPrice: '£35', skySetup: '£19.95', affiSetup: '£9.95' },
+                // { name: 'Ultrafast Plus', skyPrice: '£45', affiPrice: '£45', skySetup: '£19.95', affiSetup: '£9.95' },
+                // { name: 'Gigafast', skyPrice: '£55', affiPrice: '£55', skySetup: '£19.95', affiSetup: '£9.95' }
+            ],
+        },
+        // Affiliate BBAFFILIA
+        {        
+            affId:['100908'],
+            plan:[
+                { name: 'Superfast', skyPrice: '£28.00', affiPrice: '£26.00', skySetup: '£19.95', affiSetup: '£0.00' }
+                // { name: 'Superfast 35', skyPrice: '£28', affiPrice: '£26', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Ultrafast', skyPrice: '£35', affiPrice: '£33', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Ultrafast Plus', skyPrice: '£45', affiPrice: '£43', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Gigafast', skyPrice: '£55', affiPrice: '£53', skySetup: '£19.95', affiSetup: '£0.00' }
+            ],
+        },
+        // Affiliate AFFILI2BB
+        {        
+            affId:['54840'],
+            plan:[
+                { name: 'Superfast', skyPrice: '£28.00', affiPrice: '£26.00', skySetup: '£19.95', affiSetup: '£0.00' }
+                // { name: 'Superfast 35', skyPrice: '£28', affiPrice: '£26', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Ultrafast', skyPrice: '£35', affiPrice: '£33', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Ultrafast Plus', skyPrice: '£45', affiPrice: '£43', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Gigafast', skyPrice: '£55', affiPrice: '£53', skySetup: '£19.95', affiSetup: '£0.00' }
+            ],
+        },
+        // Affiliate BBAFFILI3
+        {        
+            affId:['903965'],
+            plan:[
+                { name: 'Superfast', skyPrice: '£28.00', affiPrice: '£26.00', skySetup: '£19.95', affiSetup: '£0.00' }
+                // { name: 'Superfast 35', skyPrice: '£28', affiPrice: '£26', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Ultrafast', skyPrice: '£35', affiPrice: '£33', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Ultrafast Plus', skyPrice: '£45', affiPrice: '£43', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Gigafast', skyPrice: '£55', affiPrice: '£53', skySetup: '£19.95', affiSetup: '£0.00' }
+            ],
+        },
+        // Affiliate BBAFFILI4
+        {        
+            affId:['113114','113113','83145','63483','54917'],
+            plan:[
+                { name: 'Superfast', skyPrice: '£28.00', affiPrice: '£26.00', skySetup: '£19.95', affiSetup: '£0.00' }
+                // { name: 'Superfast 35', skyPrice: '£28', affiPrice: '£26', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Ultrafast', skyPrice: '£35', affiPrice: '£33' },
+                // { name: 'Ultrafast Plus', skyPrice: '£45', affiPrice: '£43', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Gigafast', skyPrice: '£55', affiPrice: '£53', skySetup: '£19.95', affiSetup: '£0.00' }
+            ],
+        },
+        // Affiliate BBAFFILI5
+        {        
+            affId:['57697','54760'],
+            plan:[
+                { name: 'Superfast', skyPrice: '£28.00', affiPrice: '£26.00', skySetup: '£19.95', affiSetup: '£0.00' }
+                // { name: 'Superfast 35', skyPrice: '£28', affiPrice: '£26', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Ultrafast', skyPrice: '£35', affiPrice: '£33', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Ultrafast Plus', skyPrice: '£45', affiPrice: '£43', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Gigafast', skyPrice: '£55', affiPrice: '£53', skySetup: '£19.95', affiSetup: '£0.00' }
+            ],
+        },
+        // Affiliate BBAFFILI7
+        {        
+            affId:['191141','172777','173569','58970','276397','106140','186091','57904','48450','53493','67035','111300','88941','715855','713415','48973','519237','478081'],
+            plan:[
+                { name: 'Superfast', skyPrice: '£28.00', affiPrice: '£26.00', skySetup: '£19.95', affiSetup: '£0.00' }
+                // { name: 'Superfast 35', skyPrice: '£28', affiPrice: '£26', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Ultrafast', skyPrice: '£35', affiPrice: '£33', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Ultrafast Plus', skyPrice: '£45', affiPrice: '£43', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Gigafast', skyPrice: '£55', affiPrice: '£53', skySetup: '£19.95', affiSetup: '£0.00' }
+            ],
+        },
+        // Affiliate BBAFFILI6
+        {        
+            affId:['46407','69605','533357','458395','507547','65229','57434','315113'],
+            plan:[
+                { name: 'Superfast', skyPrice: '£28.00', affiPrice: '£26.00', skySetup: '£19.95', affiSetup: '£0.00' }
+                // { name: 'Superfast 35', skyPrice: '£28', affiPrice: '£28', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Ultrafast', skyPrice: '£35', affiPrice: '£32', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Ultrafast Plus', skyPrice: '£45', affiPrice: '£42', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Gigafast', skyPrice: '£55', affiPrice: '£52', skySetup: '£19.95', affiSetup: '£0.00' }
+            ],
+        }, 
+        
+        // Others
+        {        
+            affId:['add-broadband'],
+            plan:[
+                { name: 'Superfast', skyPrice: '£28.00', affiPrice: '£28.00', skySetup: '£19.95', affiSetup: '£0.00' }
+                // { name: 'Superfast 35', skyPrice: '£28', affiPrice: '£28', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Ultrafast', skyPrice: '£35', affiPrice: '£32', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Ultrafast Plus', skyPrice: '£45', affiPrice: '£42', skySetup: '£19.95', affiSetup: '£0.00' },
+                // { name: 'Gigafast', skyPrice: '£55', affiPrice: '£52', skySetup: '£19.95', affiSetup: '£0.00' }
+            ],
+        }
+    ];
+    
+    // Array that collects affiliate price based on affiliate ID
+    var planArr = [];
+    
+    // Current URL
+    var affiUrl = window.location.href;
+    
+    // Loop through the listed plan to see if user is from qualified affiliate
+    for(var i = 0; i < pricePlan.length; i++) {
+        var mainObj = pricePlan[i].affId;
+        var mainObjPlan = pricePlan[i].plan;        
+        for(var j = 0; j < mainObj.length; j++) {
+            // Check affiliate is Awin and has qualified affiliate ID
+            if(affiUrl.indexOf(mainObj[j]) > -1 && affiUrl.indexOf('awc') > -1 && affiUrl.indexOf('dcmp=afc') > -1) {   
+                for(var k = 0; k < mainObjPlan.length; k++) {
+                    // If URL has qualified affiliate ID, push all plans into 'planArr'
+                    var planObj = mainObjPlan[k];                
+                    planArr.push(planObj);
+                }            
+            } else if(affiUrl.indexOf(mainObj[j]) > -1) {   
+                for(var l = 0; l < mainObjPlan.length; l++) {
+                    // If URL has other plans, push all plans into 'planArr'
+                    var planObj = mainObjPlan[l];                
+                    planArr.push(planObj);
+                }            
+            }              
+        }
+    }
+    
+    if(planArr.length > 0) {
+        var encodedArr = btoa(encodeURIComponent(JSON.stringify(planArr)))
+        $smcT5.CookieManager.create("smc_affi_plan",encodedArr, 0);    
+    }
+}
+
+}catch( e ){if( 0 ){console.error("SMC Error: "+e );}}};			});
+			 });	} catch(e){
+		//Actual error
+		console.log(e);
+	}
+	}(window, document));
+}
