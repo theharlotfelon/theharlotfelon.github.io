@@ -21,8 +21,8 @@ var lpMethods = {
         headers.append("Content-Type", "application/json");
 
         let payload = {
-            iss: 'https://auth.archzero.dev/realms/LivePerson',
-            sub: 'fb037d90-a070-4c46-98a2-b36a17aa1d4b'
+            iss: window._auth.identity.iss,
+            sub: window._auth.identity.sub
         }
 
         let body = JSON.stringify({ payload, ttl: 600 });
