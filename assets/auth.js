@@ -1,3 +1,18 @@
+window.lpTag = window.lpTag || {};
+lpTag.identities = lpTag.identities || [];
+window._auth = window._auth || {};
+
+window._auth.identity = null;
+
+window._auth.identity = {
+          iss: "https://auth.archzero.dev/realms/LivePerson",
+          acr: "loa1",
+          sub: "fb037d90-a070-4c46-98a2-b36a17aa1d4b"
+      }
+
+lpTag.identities.push(function ident (cb) { cb(window._auth.identity) })
+
+
 var lpMethods = {
     lpGetAuthenticationToken: function(cb) {
         console.log("LP asked for id_token or auth code in Code Flow");
