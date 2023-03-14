@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>No Tag Loaded Test</title>
+</head>
+<body>
+<div id="blank_element"></div>
+<button type="button" id="mylink">Message Me</button>
+
+<script type="text/javascript">
+    let isTagLoaded = false;
+    let myLink = document.getElementById('mylink');
+
+    myLink.onclick = function(){
+
+        if (isTagLoaded) {
+            console.log('tag already loaded');
+        } else {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "assets/loadTag.js";
+            document.getElementsByTagName("head")[0].appendChild(script);
+            isTagLoaded = true;
+            return false;
+        }
+
+    }
+
+
+</script>
+</body>
+</html>
