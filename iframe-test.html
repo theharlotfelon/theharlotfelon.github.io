@@ -4,6 +4,158 @@
 <title>Prod Test</title>
 </head>
 <body>
+  <script>
+		// Add a random link for us to click
+		var link = window.location.href + '?' + Math.floor((Math.random() * 10) + 1);
+		var sidebar = document.getElementsByClassName('sidebar')[0];
+		sidebar.innerHTML = sidebar.innerHTML + '<p><a href="' + link +'">New Page</a></p>';
+        var log = document.getElementById('log');
+
+		var iframe = document.getElementById('iFrame'),
+			msgStore = [];
+
+		// Send message to iframe
+		var sendMessage = function sendMessage(msg){
+			iframe.contentWindow.postMessage(msg, '*');
+		}
+
+		// Handle messages from iFrame
+		window.addEventListener('message', function(msg) {
+			msgStore.push(msg.data);
+            var currentLog = '';
+			
+			for (i = 0; i < Object.keys(msgStore).length; i++) {
+				// Get the name of this property
+				var name = Object.keys(msg.data)[i];
+
+				// Get the value
+				var value = msg.data[name];
+
+				if (name != undefined) {
+                    if (i == 0) {
+                        currentLog = name + ' : ' + value;
+                    } else {
+                        currentLog = currentLog + ' | ' + name + ' : ' + value;
+                    }
+				}
+			}
+
+            log.innerHTML = '<p>' + currentLog + '</p>' + log.innerHTML;
+
+			if (msg.data.window) {
+
+				switch (msg.data.window) {
+					case 'ready':
+						iframe.style.width = msg.data.width;
+						iframe.style.height = msg.data.height;
+
+						sendMessage({lpcurl: 'https://sites-author.adobeppe.microsoft.com/content/microsoft/sandbox/components-uat/chat-v0-7.html?wcmmode=disabled'});
+						break;
+					
+					case 'maximized':
+						iframe.style.width = msg.data.width;
+						iframe.style.height = msg.data.height;
+
+						if (msg.data.height === '100vh') {
+							iframe.style.position = 'absolute';
+							iframe.style.right = '0px';
+						} else {
+							iframe.style.position = 'fixed';
+							iframe.style.bottom = '0';
+							iframe.style.right = '0px';
+							iframe.style.boxShadow = '0 0 6px rgb(214, 214, 214)';
+						}
+
+						break;
+					
+					case 'minimized':
+						iframe.style.width = msg.data.width;
+						iframe.style.height = msg.data.height;
+
+						iframe.style.position = 'fixed';
+						iframe.style.bottom = '0';
+						iframe.style.right = '0';
+						iframe.style.boxShadow = '0 0 6px rgb(214, 214, 214)';
+						break;
+					
+					case 'closed':
+						iframe.style.width = msg.data.width;
+						iframe.style.height = msg.data.height;
+						break;
+					
+					case 'opened':
+						iframe.style.width = msg.data.width;
+						iframe.style.height = msg.data.height;
+						break;
+					
+					case 'loading':
+						iframe.style.width = msg.data.width;
+						iframe.style.height = msg.data.height;
+						break;
+
+					case 'invite':
+						//iframe.style.width = msg.data.width;
+						//iframe.style.height = msg.data.height;
+						break;
+				
+					default:
+						console.log('msg not in case');
+						break;
+				}
+			}
+
+			if (msg.data.engagement) {
+				switch (msg.data.engagement) {
+					case 'buttonReady':
+						document.getElementById('chatButton').disabled = false;
+						break;
+				
+					default:
+						break;
+				}
+            
+            	sendMessage({action: 'parentsize', Height: window.innerHeight, PixelRatio: 1, Width: window.innerWidth});
+            }
+		});
+
+		var sendPurchase = function sendPurchase(){
+			var orderId = "orderId" + Math.floor(Math.random()*2500);
+			var orderTotal = Math.floor(Math.random()*1000);
+			var currencyCode = 'USD';
+
+			sendMessage({action: 'Checkout', OrderId: orderId, OrderTotal: orderTotal, CurrencyCode: currencyCode});
+		}
+
+		var sendCart = function sendCart(){
+			var Total = Math.floor(Math.random()*1000);
+
+			sendMessage({action: 'Cart', Total: Total});
+		}
+
+		window.addEventListener('resize', function(el) {
+            sendMessage({action: 'parentsize', Height: window.innerHeight, PixelRatio: 1, Width: window.innerWidth});
+            
+            if (navigator.userAgent.search('iPhone')) {
+
+            }
+        });
+
+        /* Method for updating dimensions
+        var updateDimensions = function updateDimensions() {
+            var availWidth = window.innerWidth;
+            var availHeight = window.innerHeight;
+
+            sendMessage({action: 'visibleArea', Width: availWidth, Height: availHeight});
+        }
+
+        // Method for detecting window dimension changes
+        window.addEventListener('resize', function(ev) {
+            updateDimensions();
+        });
+
+        // Init dimensions
+        updateDimensions();*/
+	</script>
 <iframe src="https://theharlotfelon.github.io/iframe-cs.html?lpsite=75554483&lpsection=human&buttons=iFrame-dev" id="iFrame-test" style="height: 600px; width: 400px;"></iframe>
 <div id="inqC2CImgContainer_Fixed2"></div>
 <div id="iFrame-dev"></div>
