@@ -2850,12 +2850,15 @@
 			var currentSkill = skillMap[lpTag.section];
 
 			if (currentSkill && lpConsentItems.invited != true) {
-				var agentAvailabilityURL = "https://mcraa.fs.liveperson.com/messaging-agent-availability/api/account/75554483/getSkillAvailability?skillID=" + currentSkill;
+				// var agentAvailabilityURL = "https://mcraa.fs.liveperson.com/messaging-agent-availability/api/account/75554483/getSkillAvailability?skillID=" + currentSkill;
 
-				var agentAvailabilityRequest = new XMLHttpRequest();
-				agentAvailabilityRequest.open("GET", agentAvailabilityURL);
+				var agentAvailabilityRequest = {
+					"responseText": {"availability":"yes"},
+					"status": 200
+				}
+				//agentAvailabilityRequest.open("GET", agentAvailabilityURL);
 
-				agentAvailabilityRequest.setRequestHeader("Accept", "*/*");
+				//agentAvailabilityRequest.setRequestHeader("Accept", "*/*");
 
 				agentAvailabilityRequest.onreadystatechange = function () {
 					if (agentAvailabilityRequest.readyState === 4) {
@@ -2872,7 +2875,7 @@
 					}
 				};
 
-				agentAvailabilityRequest.send();
+				//agentAvailabilityRequest.send();
 			}
 		}
 
